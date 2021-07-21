@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Request;
 
 class LocaleMiddleware
 {
-    public static $mainLanguage = 'en'; //основной язык, который не должен отображаться в URl
+    public static $mainLanguage = 'ua'; //основной язык, который не должен отображаться в URl
+    public static $uaLocale = 'uk';
 
-    public static $languages = ['en', 'ru', 'uk']; // Указываем, какие языки будем использовать в приложении.
+    public static $languages = ['en', 'ru', 'ua']; // Указываем, какие языки будем использовать в приложении.
 
 
 
@@ -38,7 +39,7 @@ class LocaleMiddleware
         if ($locale){
             App::setLocale($locale);
         } else { //если метки нет - устанавливаем основной язык $mainLanguage
-            App::setLocale(self::$mainLanguage);
+            App::setLocale(self::$uaLocale);
         }
 
         return $next($request); //пропускаем дальше - передаем в следующий посредник

@@ -10,6 +10,7 @@ use Eminiarts\Tabs\TabsOnEdit;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Whitecube\NovaFlexibleContent\Flexible;
 
@@ -61,29 +62,31 @@ class MainPageResource extends Resource
             Multilingual::make('Language'),
 
             Text::make('SEO-заголовок', 'seo_title')->hideFromIndex(),
-            Text::make('Мета-описание', 'meta_description')->hideFromIndex(),
+            Textarea::make('Мета-описание', 'meta_description')->hideFromIndex(),
 
             Tabs::make('Блоки главной страницы', [
                 Tab::make('Главный блок', [
 
                     Flexible::make('Заголовок', 'hero_title')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
-                        ->button('Добавить линию'),
+                        ->button('Добавить линию текста'),
 
-                    Text::make('Текст возле заголовка', 'hero_text')->hideFromIndex(),
-
-                    MediaLibrary::make('Фоновое изображение', 'hero_main_image')->hideFromIndex(),
+                    Textarea::make('Текст возле заголовка', 'hero_text')->hideFromIndex(),
 
                     Flexible::make('Изображения для слайдера', 'hero_slider')
                         ->addLayout('Слайд', 'slide', [
-                            MediaLibrary::make('Изображение', 'image')->hideFromIndex(),
+                            MediaLibrary::make('Изображение', 'value')->hideFromIndex(),
                         ])
                         ->button('Добавить слайд'),
+
+                    MediaLibrary::make('Изображение кнопки "Связаться с нами"', 'hero_contacts_us')->hideFromIndex(),
+
+
                 ]),
 
                 Tab::make('Блок "Добро пожаловать"', [
@@ -91,16 +94,14 @@ class MainPageResource extends Resource
 
                     Flexible::make('Большой заголовок', 'introduce_big_title')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->button('Добавить линию'),
 
-                    Text::make('Блок с текстом', 'introduce_text')->hideFromIndex(),
-
-                    MediaLibrary::make('Фоновое изображение', 'introduce_main_image')->hideFromIndex(),
+                    Textarea::make('Блок с текстом', 'introduce_text')->hideFromIndex(),
 
                 ]),
 
@@ -117,8 +118,9 @@ class MainPageResource extends Resource
                     Flexible::make('Описание выгодных предложений', 'benefits_items')
                         ->addLayout('Предложение', 'benefit', [
                             Text::make('Заголовок предложения', 'benefit_title')->hideFromIndex(),
-                            Text::make('Текст предложения', 'benefit_text')->hideFromIndex(),
+                            Textarea::make('Текст предложения', 'benefit_text')->hideFromIndex(),
                         ])
+                        ->limit(3)
                         ->button('Добавить предложение'),
 
                 ]),
@@ -127,14 +129,14 @@ class MainPageResource extends Resource
 
                     Flexible::make('Заголовок', 'rooms_title')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->button('Добавить линию'),
 
-                    Text::make('Блок с текстом', 'rooms_text')->hideFromIndex(),
+                    Textarea::make('Блок с текстом', 'rooms_text')->hideFromIndex(),
 
                     Text::make('Текст на кнопке "Больше"', 'rooms_more_btn_text')->hideFromIndex(),
                 ]),
@@ -143,12 +145,11 @@ class MainPageResource extends Resource
 
                     Text::make('Малый заголовок', 'services_small_title')->hideFromIndex(),
 
-                    MediaLibrary::make('Малое изображение', 'services_small_image')->hideFromIndex(),
-
                     Flexible::make('Слайды', 'services_slides')
                         ->addLayout('Слайд', 'slide', [
                             Text::make('Текст', 'slide_text')->hideFromIndex(),
-                            MediaLibrary::make('Изображение', 'slide_image')->hideFromIndex(),
+                            MediaLibrary::make('Большое изображение', 'slide_big_image')->hideFromIndex(),
+                            MediaLibrary::make('Малое изображение', 'slide_small_image')->hideFromIndex(),
                         ])
                         ->button('Добавить слайд'),
 
@@ -159,14 +160,14 @@ class MainPageResource extends Resource
 
                     Flexible::make('Заголовок', 'spa_title')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->button('Добавить линию'),
 
-                    Text::make('Блок с текстом', 'spa_text')->hideFromIndex(),
+                    Textarea::make('Блок с текстом', 'spa_text')->hideFromIndex(),
 
                     Text::make('Текст на кнопке "Больше"', 'spa_more_btn_text')->hideFromIndex(),
 
@@ -178,10 +179,10 @@ class MainPageResource extends Resource
 
                     Flexible::make('Заголовок', 'made_title')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->button('Добавить линию'),
 

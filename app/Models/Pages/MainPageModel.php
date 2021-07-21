@@ -5,6 +5,7 @@ namespace App\Models\Pages;
 use Anrail\NovaMediaLibraryTools\HasMediaToUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Spatie\Translatable\HasTranslations;
 
 class MainPageModel extends Model
@@ -18,12 +19,11 @@ class MainPageModel extends Model
         'meta_description',
         'hero_title',
         'hero_text',
-        'hero_main_image',
         'hero_slider',
+        'hero_contacts_us',
         'introduce_small_title',
         'introduce_big_title',
         'introduce_text',
-        'introduce_main_image',
         'benefits_title',
         'benefits_first_image',
         'benefits_second_image',
@@ -33,7 +33,6 @@ class MainPageModel extends Model
         'rooms_text',
         'rooms_more_btn_text',
         'services_small_title',
-        'services_small_image',
         'services_slides',
         'services_more_btn_text',
         'spa_title',
@@ -54,6 +53,7 @@ class MainPageModel extends Model
         'meta_description',
         'hero_title',
         'hero_text',
+        'hero_contacts_us',
         'introduce_small_title',
         'introduce_big_title',
         'introduce_text',
@@ -73,14 +73,16 @@ class MainPageModel extends Model
     ];
 
     public $mediaToUrl = [
-        'hero_main_image',
         'hero_slider',
+        'value',
+        'hero_contacts_us',
         'introduce_main_image',
         'benefits_first_image',
         'benefits_second_image',
         'benefits_third_image',
         'services_small_image',
         'services_slides',
+        'slide_image',
         'spa_main_image',
         'spa_small_image',
         'made_left_image',
@@ -88,4 +90,60 @@ class MainPageModel extends Model
         'made_center_small_image',
         'made_right_image',
     ];
+
+
+//    public function getMembersDataAttribute()
+//    {
+//        return json_decode($this["team_members"]);
+//    }
+//
+//    public function getMembers()
+//    {
+//        $memberIds = [];
+//        $membersData = [];
+//        $membersObject = $this["members_data"];
+//        foreach ($membersObject as $member) {
+//            $memberIds[] = $member->attributes->member;
+//        }
+//        $members = MemberModel::whereIn('id', $memberIds)->get();
+//        foreach ($membersObject as $key => $member) {
+//            $membersData[] = $members->first(function ($value) use ($member) {
+//                return $value->id === (int)$member->attributes->member;
+//            })
+//                ->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']);
+//        }
+//        $this->team_members = $membersData;
+//    }
+
+
+
+    public static function normalizeData($object){
+
+            self::getNormalizedField($object, 'hero_title', "text", false, true);
+            self::getNormalizedField($object, 'hero_slider', "image", false, false);
+            self::getNormalizedField($object, 'introduce_big_title', "text", false, true);
+            self::getNormalizedField($object, 'benefits_items', "text", true, false);
+            self::getNormalizedField($object, 'rooms_title', "text", false, true);
+            self::getNormalizedField($object, 'services_slides', "text", true, false);
+            self::getNormalizedField($object, 'spa_title', "text", false, true);
+            self::getNormalizedField($object, 'made_title', "text", false, true);
+
+        return $object;
+
+    }
+
+    public function getFullData(){
+        try{
+//            $this->getMembers();
+
+            $data = self::normalizeData($this->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+
+            return $data;
+
+        } catch (\Exception $ex){
+            throw new ModelNotFoundException();
+        }
+
+    }
+
 }

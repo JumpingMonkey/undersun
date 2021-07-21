@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pages\MainPageModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -11,16 +12,14 @@ class MainPageController extends Controller
     public function index()
     {
 
-        dd(App::getLocale());
+        $data = MainPageModel::firstOrFail();
 
-//        $data = MainPageModel::firstOrFail();
-//
-//        $content = $data->getFullData();
+        $content = $data->getFullData();
 
-//        return response()->json([
-//            'status' => 'success',
-//            'content' => $content,
-//        ]);
+        return response()->json([
+            'status' => 'success',
+            'content' => $content,
+        ]);
 
     }
 }

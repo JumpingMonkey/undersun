@@ -20,12 +20,10 @@ class CreateMainPagesTable extends Migration
             $table->json('meta_description');
             $table->json('hero_title');
             $table->json('hero_text');
-            $table->string('hero_main_image')->nullable();
             $table->json('hero_slider');
             $table->json('introduce_small_title');
             $table->json('introduce_big_title');
             $table->json('introduce_text');
-            $table->string('introduce_main_image')->nullable();
             $table->json('benefits_title');
             $table->string('benefits_first_image')->nullable();
             $table->string('benefits_second_image')->nullable();
@@ -35,7 +33,6 @@ class CreateMainPagesTable extends Migration
             $table->json('rooms_text');
             $table->json('rooms_more_btn_text');
             $table->json('services_small_title');
-            $table->string('services_small_image')->nullable();
             $table->json('services_slides');
             $table->json('services_more_btn_text');
             $table->json('spa_title');
