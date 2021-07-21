@@ -5,6 +5,7 @@ namespace App\Models;
 use Anrail\NovaMediaLibraryTools\HasMediaToUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Spatie\Translatable\HasTranslations;
 
 class RoomModel extends Model
@@ -16,76 +17,87 @@ class RoomModel extends Model
     protected $fillable = [
         'seo_title',
         'meta_description',
-        'hero_title',
-        'hero_text',
-        'hero_main_image',
-        'hero_slider',
-        'introduce_small_title',
-        'introduce_big_title',
-        'introduce_text',
-        'introduce_main_image',
-        'benefits_title',
-        'benefits_first_image',
-        'benefits_second_image',
-        'benefits_third_image',
-        'benefits_items',
-        'rooms_title',
-        'rooms_text',
-        'rooms_more_btn_text',
-        'services_small_title',
-        'services_small_image',
-        'services_slides',
-        'services_more_btn_text',
-        'spa_title',
-        'spa_text',
-        'spa_main_image',
-        'spa_small_image',
-        'spa_more_btn_text',
-        'made_title',
-        'made_left_image',
-        'made_center_big_image',
-        'made_center_small_image',
-        'made_right_image',
-        'made_more_btn_text',
+        'room_link',
+        'room_name',
+        'room_area',
+        'room_amount_persons',
+        'room_bed_size',
+        'room_main_image',
+        'room_description_title',
+        'room_description_text',
+        'room_description_first_image',
+        'room_description_second_image',
+        'room_slider_items',
+        'room_features_title',
+        'room_features_items',
+        'room_feature_big_image',
+        'room_feature_small_image',
+        'room_options_small_title',
+        'room_options_items',
+        'room_options_btn_text',
+        'room_main_slider_image',
+        'room_main_slider_text',
     ];
 
     public $translatable = [
         'seo_title',
         'meta_description',
-        'hero_title',
-        'hero_text',
-        'introduce_small_title',
-        'introduce_big_title',
-        'introduce_text',
-        'benefits_title',
-        'benefits_items',
-        'rooms_title',
-        'rooms_text',
-        'rooms_more_btn_text',
-        'services_small_title',
-        'services_slides',
-        'services_more_btn_text',
-        'spa_title',
-        'spa_text',
-        'spa_more_btn_text',
-        'made_title',
-        'made_more_btn_text',
+        'room_name',
+        'room_area',
+        'room_amount_persons',
+        'room_bed_size',
+        'room_description_title',
+        'room_description_text',
+        'room_slider_items',
+        'room_features_title',
+        'room_features_items',
+        'room_options_small_title',
+        'room_options_items',
+        'room_options_btn_text',
+        'room_main_slider_text',
     ];
 
     public $mediaToUrl = [
-        'hero_main_image',
-        'hero_slider',
-        'introduce_main_image',
-        'benefits_first_image',
-        'benefits_second_image',
-        'benefits_third_image',
-        'services_small_image',
-        'services_slides',
-        'spa_main_image',
-        'spa_small_image',
-        'made_left_image',
-        'made_center_big_image',
-        'made_center_small_image',
-        'made_right_image',
+        'room_main_image',
+        'room_description_first_image',
+        'room_description_second_image',
+        'room_feature_big_image',
+        'room_feature_small_image',
+        'room_main_slider_image',
     ];
+
+
+    public static function normalizeData($object){
+
+        self::getNormalizedField($object, 'room_name', "value", false, true);
+
+        return $object;
+
+    }
+
+
+    public static function getFullData(){
+        try{
+
+            $rooms = RoomModel::all();
+
+            $content = [];
+            foreach ($rooms as $room){
+                $translatedData = $room->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']);
+                $content[] = self::normalizeData($translatedData);
+            }
+
+            dd($content);
+
+            return $content;
+
+        } catch (\Exception $ex){
+            throw new ModelNotFoundException();
+        }
+    }
+
+
+
+
+
 }

@@ -65,16 +65,21 @@ class RoomResource extends Resource
             Text::make('SEO-заголовок', 'seo_title')->hideFromIndex(),
             Textarea::make('Мета-описание', 'meta_description')->hideFromIndex(),
 
+            Text::make('Идентификатор комнаты (для ссылки)', 'room_link')
+                ->hideFromIndex()
+                ->rules('required')
+                ->creationRules('unique:rooms'),
+
             Tabs::make('Блоки страницы конкретной комнаты', [
 
                 Tab::make('Главный блок', [
 
                     Flexible::make('Название комнаты', 'room_name')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->button('Добавить линию'),
 
@@ -93,10 +98,10 @@ class RoomResource extends Resource
 
                     Flexible::make('Заголовок описания', 'room_description_title')
                         ->addLayout('Толстый текст', 'bold_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->addLayout('Тонкий текст', 'thin_text', [
-                            Text::make('Текст', 'text'),
+                            Text::make('Текст', 'value'),
                         ])
                         ->button('Добавить линию'),
 
@@ -112,12 +117,18 @@ class RoomResource extends Resource
 
                 Tab::make('Блок со слайдером', [
 
-                    Flexible::make('Описание выгодных предложений', 'benefits_items')
-                        ->addLayout('Предложение', 'benefit', [
-                            Text::make('Заголовок предложения', 'benefit_title')->hideFromIndex(),
-                            Text::make('Текст предложения', 'benefit_text')->hideFromIndex(),
+                    Flexible::make('Слайдер', 'room_slider_items')
+                        ->addLayout('Вкладка', 'tab', [
+
+                            Text::make('Заголовок вкладки', 'tab_title')->hideFromIndex(),
+
+                            Flexible::make('Изображения', 'tab_images')
+                                ->addLayout('Изображение', 'image', [
+                                    MediaLibrary::make('Изображение', 'value')->hideFromIndex(),
+                                ])
+                                ->button('Добавить изображение'),
                         ])
-                        ->button('Добавить предложение'),
+                        ->button('Добавить вкладку'),
 
                 ]),
 
@@ -125,15 +136,13 @@ class RoomResource extends Resource
 
                     Text::make('Заголовок', 'room_features_title')->hideFromIndex(),
 
-
-
                     Flexible::make('Особенности', 'room_features_items')
                         ->addLayout('Особенность', 'feature', [
                             Text::make('Заголовок особенности', 'feature_title'),
 
-                            Flexible::make('Список', 'room_features_items')
+                            Flexible::make('Список', 'feature_items')
                                 ->addLayout('Пункт', 'item', [
-                                    Text::make('Текст', 'text'),
+                                    Text::make('Текст', 'value'),
                                 ])
                                 ->button('Добавить пункт'),
 
@@ -152,14 +161,15 @@ class RoomResource extends Resource
                     Flexible::make('Слайды', 'room_options_items')
                         ->addLayout('Слайд', 'slide', [
                             Text::make('Текст', 'slide_text')->hideFromIndex(),
-                            MediaLibrary::make('Изображение', 'slide_image')->hideFromIndex(),
+                            MediaLibrary::make('Большое изображение', 'slide_big_image')->hideFromIndex(),
+                            MediaLibrary::make('Малое изображение', 'slide_small_image')->hideFromIndex(),
                         ])
                         ->button('Добавить слайд'),
 
                     Text::make('Текст на кнопке "Больше"', 'room_options_btn_text')->hideFromIndex(),
                 ]),
 
-                Tab::make('Комната на главной странице', [
+                Tab::make('Для слайдера на главной странице', [
 
                     MediaLibrary::make('Изображение для слайда', 'room_main_slider_image')->hideFromIndex(),
                     Text::make('Текст для слайда', 'room_main_slider_text')->hideFromIndex(),

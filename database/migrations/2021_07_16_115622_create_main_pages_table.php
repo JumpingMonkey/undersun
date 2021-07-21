@@ -21,6 +21,7 @@ class CreateMainPagesTable extends Migration
             $table->json('hero_title');
             $table->json('hero_text');
             $table->json('hero_slider');
+            $table->json('hero_contacts_us');
             $table->json('introduce_small_title');
             $table->json('introduce_big_title');
             $table->json('introduce_text');

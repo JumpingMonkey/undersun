@@ -18,6 +18,8 @@ class CreateRoomsTable extends Migration
 
             $table->json('seo_title');
             $table->json('meta_description');
+            $table->string('room_link')->unique();
+
             $table->json('room_name');
             $table->json('room_area');
             $table->json('room_amount_persons');
@@ -29,12 +31,12 @@ class CreateRoomsTable extends Migration
             $table->string('room_description_first_image')->nullable();
             $table->string('room_description_second_image')->nullable();
 
-            $table->json('room_slider_images');
+            $table->json('room_slider_items');
 
             $table->json('room_features_title');
             $table->json('room_features_items');
-            $table->json('room_feature_big_image');
-            $table->json('room_feature_small_image');
+            $table->string('room_feature_big_image')->nullable();
+            $table->string('room_feature_small_image')->nullable();
 
             $table->json('room_options_small_title');
             $table->json('room_options_items');

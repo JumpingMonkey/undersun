@@ -82,6 +82,8 @@ class MainPageModel extends Model
         'benefits_third_image',
         'services_small_image',
         'services_slides',
+        'slide_big_image',
+        'slide_small_image',
         'slide_image',
         'spa_main_image',
         'spa_small_image',
@@ -119,14 +121,14 @@ class MainPageModel extends Model
 
     public static function normalizeData($object){
 
-            self::getNormalizedField($object, 'hero_title', "text", false, true);
-            self::getNormalizedField($object, 'hero_slider', "image", false, false);
-            self::getNormalizedField($object, 'introduce_big_title', "text", false, true);
-            self::getNormalizedField($object, 'benefits_items', "text", true, false);
-            self::getNormalizedField($object, 'rooms_title', "text", false, true);
-            self::getNormalizedField($object, 'services_slides', "text", true, false);
-            self::getNormalizedField($object, 'spa_title', "text", false, true);
-            self::getNormalizedField($object, 'made_title', "text", false, true);
+            self::getNormalizedField($object, 'hero_title', "value", false, true);
+            self::getNormalizedField($object, 'hero_slider', "value", false, false);
+            self::getNormalizedField($object, 'introduce_big_title', "value", false, true);
+            self::getNormalizedField($object, 'benefits_items', "value", true, false);
+            self::getNormalizedField($object, 'rooms_title', "value", false, true);
+            self::getNormalizedField($object, 'services_slides', "value", true, false);
+            self::getNormalizedField($object, 'spa_title', "value", false, true);
+            self::getNormalizedField($object, 'made_title', "value", false, true);
 
         return $object;
 
