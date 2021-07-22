@@ -176,7 +176,6 @@ class RoomResource extends Resource
 
                 ]),
             ])->withToolbar(),
-
         ];
     }
 
