@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('locale')->group(function (){
     Route::get('/main', [MainPageController::class, 'index']);
     Route::get('/rooms', [RoomController::class, 'index']);
+    Route::get('/rooms/{room:room_link}', [RoomController::class, 'show']);
 });
