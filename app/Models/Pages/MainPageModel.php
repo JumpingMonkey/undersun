@@ -134,13 +134,14 @@ class MainPageModel extends Model
 
     }
 
-    public function getFullData(){
+    public static function getMainPage(){
         try{
-//            $this->getMembers();
 
-            $data = self::normalizeData($this->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+            $data = MainPageModel::firstOrFail();
 
-            return $data;
+            $content = self::normalizeData($data->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+
+            return $content;
 
         } catch (\Exception $ex){
             throw new ModelNotFoundException();

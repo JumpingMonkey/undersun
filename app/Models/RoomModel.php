@@ -105,10 +105,19 @@ class RoomModel extends Model
     }
 
 
-    public static function getAllRooms(){
+    public static function getAllRooms($columns = []){
         try{
-            $rooms = RoomModel::all();
+
+            $query = RoomModel::query();
+
+            if ($columns){
+                $query->addSelect($columns);
+            }
+
+            $rooms = $query->get();
+
             $content = [];
+
             foreach ($rooms as $room){
                 $translatedData = $room->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']);
                 $content[] = self::normalizeData($translatedData);
