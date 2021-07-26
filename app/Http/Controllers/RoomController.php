@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pages\AllRoomsPageModel;
 use App\Models\RoomModel;
 use Illuminate\Http\Request;
 
@@ -9,11 +10,13 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $content = RoomModel::getAllRooms();
+        $roomsPage = AllRoomsPageModel::getAllRoomsPage();
+        $rooms = RoomModel::getAllRooms();
 
         return response()->json([
             'status' => 'success',
-            'content' => $content,
+            'rooms_page' => $roomsPage,
+            'rooms' => $rooms,
         ]);
     }
 

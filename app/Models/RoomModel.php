@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Anrail\NovaMediaLibraryTools\HasMediaToUrl;
+use App\Traits\TranslateAndConvertMediaUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -10,7 +10,7 @@ use Spatie\Translatable\HasTranslations;
 
 class RoomModel extends Model
 {
-    use HasFactory, HasTranslations, HasMediaToUrl;
+    use HasFactory, HasTranslations, TranslateAndConvertMediaUrl;
 
     protected $table = "rooms";
 

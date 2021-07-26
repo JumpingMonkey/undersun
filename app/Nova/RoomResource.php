@@ -169,10 +169,10 @@ class RoomResource extends Resource
                     Text::make('Текст на кнопке "Больше"', 'room_options_btn_text')->hideFromIndex(),
                 ]),
 
-                Tab::make('Для слайдера на главной странице', [
+                Tab::make('Для других страниц', [
 
-                    MediaLibrary::make('Изображение для слайда', 'room_main_slider_image')->hideFromIndex(),
-                    Text::make('Текст для слайда', 'room_main_slider_text')->hideFromIndex(),
+                    MediaLibrary::make('Изображение для превью', 'room_preview_image')->hideFromIndex(),
+                    Text::make('Название комнаты в одну строку', 'room_name_full')->hideFromIndex(),
 
                 ]),
             ])->withToolbar(),

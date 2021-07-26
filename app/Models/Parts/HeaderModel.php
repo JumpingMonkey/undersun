@@ -2,14 +2,14 @@
 
 namespace App\Models\Parts;
 
-use Anrail\NovaMediaLibraryTools\HasMediaToUrl;
+use App\Traits\TranslateAndConvertMediaUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
 class HeaderModel extends Model
 {
-    use HasFactory, HasTranslations, HasMediaToUrl;
+    use HasFactory, HasTranslations, TranslateAndConvertMediaUrl;
 
     protected $table = "headers";
 

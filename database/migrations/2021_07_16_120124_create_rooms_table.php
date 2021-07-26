@@ -42,8 +42,8 @@ class CreateRoomsTable extends Migration
             $table->json('room_options_items');
             $table->json('room_options_btn_text');
 
-            $table->string('room_main_slider_image')->nullable();
-            $table->json('room_main_slider_text');
+            $table->string('room_preview_image')->nullable();
+            $table->json('room_name_full');
 
             $table->timestamps();
         });
