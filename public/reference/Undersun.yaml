@@ -725,12 +725,6 @@ paths:
                       room_options_btn_text:
                         type: string
                         minLength: 1
-                      room_preview_image:
-                        type: string
-                        minLength: 1
-                      room_name_full:
-                        type: string
-                        minLength: 1
               examples:
                 example:
                   value:
@@ -799,8 +793,6 @@ paths:
                           slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
                           slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
                       room_options_btn_text: Discover more UA
-                      room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
-                      room_name_full: Standart room UA
         '404':
           $ref: '#/components/responses/404-error'
       operationId: get-rooms-slug
