@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
   title: Undersun
   version: '1.0'
@@ -1166,6 +1166,51 @@ paths:
                       footer_public_offer_file:
                         type: string
                         minLength: 1
+              examples:
+                example:
+                  value:
+                    status: success
+                    header:
+                      header_logo: /storage/map-markerb66fdb9-1627288188vqlbK.svg
+                      header_navigation:
+                        - link: /rooms
+                          name: Rooms
+                        - link: /spa
+                          name: SPA
+                        - link: /restaurant
+                          name: Restaraunt
+                        - link: /gallery
+                          name: Gallery
+                        - link: /leisure
+                          name: Leisure
+                        - link: /contacts
+                          name: Contacts
+                    footer:
+                      footer_logo: /storage/map-markerb66fdb9-1627288188vqlbK.svg
+                      footer_navigation:
+                        - link: /rooms
+                          name: Rooms
+                        - link: /spa
+                          name: SPA
+                        - link: /restaurant
+                          name: Restaurant
+                        - link: /gallery
+                          name: Gallery
+                        - link: /leisure
+                          name: Leisure
+                        - link: /contacts
+                          name: Contacts
+                      footer_address_text: 'г. Одесса, пр-т Гагарина, 25'
+                      footer_address_map: 'https://goo.gl/maps/cCWD8NCFHChNV1qx6'
+                      footer_tel: 0800 500 400
+                      footer_social:
+                        - social_image: /storage/phone03468b6-1627288188cIH2n.svg
+                          social_link: 'https://uk-ua.facebook.com/'
+                        - social_image: /storage/mastercard353a781-1627288188qaCZC.svg
+                          social_link: 'https://www.instagram.com/'
+                      footer_copyright: © All RIGHTS RESERVED 2020. undersun spa hotel
+                      footer_public_offer_text: Договор публичной оферты
+                      footer_public_offer_file: /storage/katalog-1627288219SlJdL.pdf
         '404':
           $ref: '#/components/responses/404-error'
       operationId: get-parts
