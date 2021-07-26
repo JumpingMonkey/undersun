@@ -130,7 +130,7 @@ class RoomModel extends Model
 
     public static function getCurrentRoom(RoomModel $room){
         try{
-            $translatedData = $room->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']);
+            $translatedData = $room->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at', 'room_preview_image', 'room_name_full']);
             $content = self::normalizeData($translatedData);
             return $content;
         } catch (\Exception $ex){
