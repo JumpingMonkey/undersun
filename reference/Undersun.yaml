@@ -1,0 +1,1214 @@
+openapi: 3.1.0
+info:
+  title: Undersun
+  version: '1.0'
+  summary: Undersun API documentation
+  description: Undersun API documentation
+  contact:
+    name: Empty
+    url: Empty
+    email: Empty
+  termsOfService: Empty
+servers:
+  - url: 'https://backend.undersunhotel.com.ua/api'
+paths:
+  /main:
+    get:
+      summary: Get main page
+      tags:
+        - Main page
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    status: success
+                    content:
+                      seo_title: SEO-заголовок
+                      meta_description: Мета-описание
+                      hero_title:
+                        - bold_text: 'Made for your '
+                        - thin_text: comfort
+                      hero_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
+                      hero_slider:
+                        - /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                        - /storage/slider-image0299412-1627288194dlJuu.svg
+                        - /storage/slide7b5fb3f-1627288193g3ODS.svg
+                        - null
+                      hero_contacts_us: /storage/callback-btn5f2660a-1627288182tvcwl.svg
+                      introduce_small_title: welcome to
+                      introduce_big_title:
+                        - bold_text: Boutique hotel in
+                        - thin_text: 'odessa, ukraine'
+                      introduce_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.'
+                      benefits_title: The journey is the destination
+                      benefits_first_image: /storage/slider-image0299412-1627288194dlJuu.svg
+                      benefits_second_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      benefits_third_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                      benefits_items:
+                        - benefit_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor uat. Duis aute irure dolor.'
+                          benefit_title: Benefit no. 1
+                        - benefit_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor uat. Duis aute irure dolor.'
+                          benefit_title: Benefit no. 2
+                        - benefit_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor uat. Duis aute irure dolor.'
+                          benefit_title: Benefit no. 3
+                      rooms_title:
+                        - bold_text: Boutique hotel in
+                        - thin_text: 'odessa, ukraine'
+                      rooms_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut'
+                      rooms_more_btn_text: Discover more
+                      services_small_title: Lorem ipsum dolor
+                      services_slides:
+                        - slide_text: sports ground
+                          slide_big_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                          slide_small_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                        - slide_text: garden
+                          slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                          slide_small_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
+                        - slide_text: Restaurant
+                          slide_big_image: /storage/gyroscooterad9d86b-1627288183wAn3Z.jpg
+                          slide_small_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                        - slide_text: gyroscooters
+                          slide_big_image: /storage/restaurant-small-img4aa5d89-1627288189Dx8gM.svg
+                          slide_small_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
+                      services_more_btn_text: Discover more
+                      spa_title:
+                        - bold_text: spa complex in
+                        - thin_text: 'odessa, ukraine'
+                      spa_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et'
+                      spa_main_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                      spa_small_image: /storage/made-for-smalle891e39-16272881883SdGj.svg
+                      spa_more_btn_text: Discover more
+                      made_title:
+                        - bold_text: made for the
+                        - thin_text: eternally-curios
+                        - bold_text: 'travelers, bon'
+                        - bold_text: vivants & the
+                        - thin_text: design oriented.
+                      made_left_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      made_center_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                      made_center_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      made_right_image: /storage/slider-image0299412-1627288194dlJuu.svg
+                      made_more_btn_text: Discover more
+                      rooms_items:
+                        - room_link: standart
+                          room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                          room_name_full: Standart room
+                        - room_link: deluxe
+                        - room_link: family-suite
+                properties:
+                  status:
+                    type: string
+                    minLength: 1
+                  content:
+                    type: object
+                    properties:
+                      seo_title:
+                        type: string
+                        minLength: 1
+                      meta_description:
+                        type: string
+                        minLength: 1
+                      hero_title:
+                        type: array
+                        uniqueItems: false
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              bold_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                      hero_text:
+                        type: string
+                        minLength: 1
+                      hero_slider:
+                        type: array
+                        items:
+                          type: string
+                      hero_contacts_us:
+                        type: string
+                        minLength: 1
+                      introduce_small_title:
+                        type: string
+                        minLength: 1
+                      introduce_big_title:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                      introduce_text:
+                        type: string
+                        minLength: 1
+                      benefits_title:
+                        type: string
+                        minLength: 1
+                      benefits_first_image:
+                        type: string
+                        minLength: 1
+                      benefits_second_image:
+                        type: string
+                        minLength: 1
+                      benefits_third_image:
+                        type: string
+                        minLength: 1
+                      benefits_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            benefit_text:
+                              type: string
+                              minLength: 1
+                            benefit_title:
+                              type: string
+                              minLength: 1
+                      rooms_title:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                      rooms_text:
+                        type: string
+                        minLength: 1
+                      rooms_more_btn_text:
+                        type: string
+                        minLength: 1
+                      services_small_title:
+                        type: string
+                        minLength: 1
+                      services_slides:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            slide_text:
+                              type: string
+                              minLength: 1
+                            slide_big_image:
+                              type: string
+                              minLength: 1
+                            slide_small_image:
+                              type: string
+                              minLength: 1
+                      services_more_btn_text:
+                        type: string
+                        minLength: 1
+                      spa_title:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              bold_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                      spa_text:
+                        type: string
+                        minLength: 1
+                      spa_main_image:
+                        type: string
+                        minLength: 1
+                      spa_small_image:
+                        type: string
+                        minLength: 1
+                      spa_more_btn_text:
+                        type: string
+                        minLength: 1
+                      made_title:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              bold_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                      made_left_image:
+                        type: string
+                        minLength: 1
+                      made_center_big_image:
+                        type: string
+                        minLength: 1
+                      made_center_small_image:
+                        type: string
+                        minLength: 1
+                      made_right_image:
+                        type: string
+                        minLength: 1
+                      made_more_btn_text:
+                        type: string
+                        minLength: 1
+                      rooms_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            room_link:
+                              type: string
+                              minLength: 1
+                            room_preview_image:
+                              type: string
+                              minLength: 1
+                            room_name_full:
+                              type: string
+                              minLength: 1
+              examples:
+                example:
+                  value:
+                    status: success
+                    content:
+                      seo_title: SEO-заголовок
+                      meta_description: Мета-описание
+                      hero_title:
+                        - bold_text: 'Made for your '
+                        - thin_text: comfort
+                      hero_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna'
+                      hero_slider:
+                        - /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                        - /storage/slider-image0299412-1627288194dlJuu.svg
+                        - /storage/slide7b5fb3f-1627288193g3ODS.svg
+                      hero_contacts_us: /storage/callback-btn5f2660a-1627288182tvcwl.svg
+                      introduce_small_title: welcome to
+                      introduce_big_title:
+                        - bold_text: Boutique hotel in
+                        - thin_text: 'odessa, ukraine'
+                      introduce_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.'
+                      benefits_title: The journey is the destination
+                      benefits_first_image: /storage/slider-image0299412-1627288194dlJuu.svg
+                      benefits_second_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      benefits_third_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                      benefits_items:
+                        - benefit_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor uat. Duis aute irure dolor.'
+                          benefit_title: Benefit no. 1
+                        - benefit_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor uat. Duis aute irure dolor.'
+                          benefit_title: Benefit no. 2
+                        - benefit_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor uat. Duis aute irure dolor.'
+                          benefit_title: Benefit no. 3
+                      rooms_title:
+                        - bold_text: Boutique hotel in
+                        - thin_text: 'odessa, ukraine'
+                      rooms_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut'
+                      rooms_more_btn_text: Discover more
+                      services_small_title: Lorem ipsum dolor
+                      services_slides:
+                        - slide_text: sports ground
+                          slide_big_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                          slide_small_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                        - slide_text: garden
+                          slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                          slide_small_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
+                        - slide_text: Restaurant
+                          slide_big_image: /storage/gyroscooterad9d86b-1627288183wAn3Z.jpg
+                          slide_small_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                        - slide_text: gyroscooters
+                          slide_big_image: /storage/restaurant-small-img4aa5d89-1627288189Dx8gM.svg
+                          slide_small_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
+                      services_more_btn_text: Discover more
+                      spa_title:
+                        - bold_text: spa complex in
+                        - thin_text: 'odessa, ukraine'
+                      spa_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et'
+                      spa_main_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                      spa_small_image: /storage/made-for-smalle891e39-16272881883SdGj.svg
+                      spa_more_btn_text: Discover more
+                      made_title:
+                        - bold_text: made for the
+                        - thin_text: eternally-curios
+                        - bold_text: 'travelers, bon'
+                        - bold_text: vivants & the
+                        - thin_text: design oriented.
+                      made_left_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      made_center_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                      made_center_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      made_right_image: /storage/slider-image0299412-1627288194dlJuu.svg
+                      made_more_btn_text: Discover more
+                      rooms_items:
+                        - room_link: standart
+                          room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                          room_name_full: Standart room
+                        - room_link: deluxe
+                        - room_link: family-suite
+        '404':
+          $ref: '#/components/responses/404-error'
+      operationId: get-main
+      description: Get content of main page
+      parameters:
+        - $ref: '#/components/parameters/lang'
+  /rooms:
+    get:
+      summary: Get rooms page
+      tags:
+        - All rooms
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    status: success
+                    rooms_page:
+                      seo_title: SEO-заголовок
+                      meta_description: Мета-описание
+                      hero_title: Accommodations
+                      hero_text: Kick Your Boots Off and Stay Awhile
+                      area_label: 'Average area:'
+                      bed_label: 'Bed type:'
+                      view_label: 'View:'
+                    rooms:
+                      - seo_title: SEO-заголовок
+                        meta_description: Мета-описание
+                        room_link: standart
+                        room_name:
+                          - bold_text: standart
+                          - thin_text: room
+                        room_area: 35 sq. m.
+                        room_amount_persons: 2 persons
+                        room_bed_size: king-size bed
+                        room_main_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                        room_description_title:
+                          - bold_text: A place of
+                          - thin_text: distinctive style
+                        room_description_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.'
+                        room_description_first_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                        room_description_second_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
+                        room_slider_items:
+                          - tab_title: bedroom
+                            tab_images:
+                              - /storage/slide7b5fb3f-1627288193g3ODS.svg
+                              - /storage/spa6ba207d-1627288201HpOco.svg
+                          - tab_title: living room
+                            tab_images:
+                              - /storage/small-image63b22f0-1627288195ec5fs.svg
+                              - /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                          - tab_title: bathroom
+                            tab_images:
+                              - /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                              - /storage/garden22c95e1-1627288182230Xx.jpg
+                        room_features_title: Features
+                        room_features_items:
+                          - feature_items:
+                              - Finest linen & towels
+                              - 'High-speed fibre wifi '
+                              - Smart TV with MultiChoice
+                            feature_title: 'Bed & Bath:'
+                          - feature_items:
+                              - 'Breakfast served from 08:00 till 10:30'
+                              - Well-stocked honesty bar & snacks
+                              - Housekeeping service
+                            feature_title: 'Service & Amenities:'
+                          - feature_items:
+                              - 'Breakfast served from 08:00 till 10:30'
+                              - Well-stocked honesty bar & snacks
+                              - Housekeeping service
+                            feature_title: 'Service & Amenities:'
+                        room_feature_big_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                        room_feature_small_image: /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                        room_options_small_title: Lorem ipsum dolor
+                        room_options_items:
+                          - slide_text: Family
+                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                            slide_small_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                          - slide_text: Junior suite
+                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                            slide_small_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                          - slide_text: Suite
+                            slide_big_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
+                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                          - slide_text: 'Presidential '
+                            slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                        room_options_btn_text: Discover more
+                        room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                        room_name_full: Standart room
+                      - seo_title: '1'
+                        meta_description: '1'
+                        room_link: deluxe
+                        room_name:
+                          - bold_text: '1'
+                          - thin_text: '1'
+                        room_area: '1'
+                        room_amount_persons: '1'
+                        room_bed_size: '1'
+                      - seo_title: '2'
+                        meta_description: '2'
+                        room_link: family-suite
+                        room_area: '2'
+                        room_amount_persons: '2'
+                        room_bed_size: '2'
+                properties:
+                  status:
+                    type: string
+                    minLength: 1
+                  rooms_page:
+                    type: object
+                    properties:
+                      seo_title:
+                        type: string
+                        minLength: 1
+                      meta_description:
+                        type: string
+                        minLength: 1
+                      hero_title:
+                        type: string
+                        minLength: 1
+                      hero_text:
+                        type: string
+                        minLength: 1
+                      area_label:
+                        type: string
+                        minLength: 1
+                      bed_label:
+                        type: string
+                        minLength: 1
+                      view_label:
+                        type: string
+                        minLength: 1
+                  rooms:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        room_link:
+                          type: string
+                          minLength: 1
+                        room_name:
+                          type: array
+                          uniqueItems: true
+                          minItems: 1
+                          items:
+                            - type: object
+                              properties:
+                                bold_text:
+                                  type: string
+                                  minLength: 1
+                            - type: object
+                              properties:
+                                thin_text:
+                                  type: string
+                                  minLength: 1
+                        room_area:
+                          type: string
+                          minLength: 1
+                        room_amount_persons:
+                          type: string
+                          minLength: 1
+                        room_bed_size:
+                          type: string
+                          minLength: 1
+                        room_main_image:
+                          type: string
+                          minLength: 1
+                        room_description_title:
+                          type: array
+                          uniqueItems: true
+                          minItems: 1
+                          items:
+                            - type: object
+                              properties:
+                                bold_text:
+                                  type: string
+                                  minLength: 1
+                            - type: object
+                              properties:
+                                thin_text:
+                                  type: string
+                                  minLength: 1
+                        room_description_text:
+                          type: string
+                          minLength: 1
+                        room_description_first_image:
+                          type: string
+                          minLength: 1
+                        room_description_second_image:
+                          type: string
+                          minLength: 1
+                        room_slider_items:
+                          type: array
+                          uniqueItems: true
+                          minItems: 1
+                          items:
+                            type: object
+                            properties:
+                              tab_title:
+                                type: string
+                                minLength: 1
+                              tab_images:
+                                type: array
+                                items:
+                                  type: string
+                        room_features_title:
+                          type: string
+                          minLength: 1
+                        room_features_items:
+                          type: array
+                          uniqueItems: true
+                          minItems: 1
+                          items:
+                            type: object
+                            properties:
+                              feature_items:
+                                type: array
+                                items:
+                                  type: string
+                              feature_title:
+                                type: string
+                                minLength: 1
+                        room_feature_big_image:
+                          type: string
+                          minLength: 1
+                        room_feature_small_image:
+                          type: string
+                          minLength: 1
+                        room_options_small_title:
+                          type: string
+                          minLength: 1
+                        room_options_items:
+                          type: array
+                          uniqueItems: true
+                          minItems: 1
+                          items:
+                            type: object
+                            properties:
+                              slide_text:
+                                type: string
+                                minLength: 1
+                              slide_big_image:
+                                type: string
+                                minLength: 1
+                              slide_small_image:
+                                type: string
+                                minLength: 1
+                        room_options_btn_text:
+                          type: string
+                          minLength: 1
+                        room_preview_image:
+                          type: string
+                          minLength: 1
+                        room_name_full:
+                          type: string
+                          minLength: 1
+                      required:
+                        - room_link
+              examples:
+                example:
+                  value:
+                    status: success
+                    rooms_page:
+                      seo_title: SEO-заголовок UA
+                      meta_description: Мета-описание UA
+                      hero_title: Accommodations UA
+                      hero_text: Kick Your Boots Off and Stay Awhile UA
+                      area_label: 'Average area: UA'
+                      bed_label: 'Bed type: UA'
+                      view_label: 'View: UA'
+                    rooms:
+                      - room_link: standart
+                        room_name:
+                          - bold_text: standart UA
+                          - thin_text: room UA
+                        room_area: 35 sq. m. UA
+                        room_amount_persons: 2 persons UA
+                        room_bed_size: king-size bed UA
+                        room_main_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                        room_description_title:
+                          - bold_text: A place of UA
+                          - thin_text: distinctive style UA
+                        room_description_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. UA'
+                        room_description_first_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                        room_description_second_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
+                        room_slider_items:
+                          - tab_title: bedroom UA
+                            tab_images:
+                              - /storage/slide7b5fb3f-1627288193g3ODS.svg
+                              - /storage/spa6ba207d-1627288201HpOco.svg
+                          - tab_title: living room UA
+                            tab_images:
+                              - /storage/small-image63b22f0-1627288195ec5fs.svg
+                              - /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                          - tab_title: bathroom UA
+                            tab_images:
+                              - /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                              - /storage/garden22c95e1-1627288182230Xx.jpg
+                        room_features_title: Features UA
+                        room_features_items:
+                          - feature_items:
+                              - Finest linen & towels UA
+                              - High-speed fibre wifi  UA
+                              - Smart TV with MultiChoice UA
+                            feature_title: 'Bed & Bath: UA'
+                          - feature_items:
+                              - 'Breakfast served from 08:00 till 10:30 UA'
+                              - Well-stocked honesty bar & snacks UA
+                              - Housekeeping service UA
+                            feature_title: 'Service & Amenities: UA'
+                          - feature_items:
+                              - 'Breakfast served from 08:00 till 10:31 UA'
+                              - Well-stocked honesty bar & snacks UA
+                              - Housekeeping service UA
+                            feature_title: 'Service & Amenities: UA'
+                        room_feature_big_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                        room_feature_small_image: /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                        room_options_small_title: Lorem ipsum dolor UA
+                        room_options_items:
+                          - slide_text: Family UA
+                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                            slide_small_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                          - slide_text: Junior suite UA
+                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                            slide_small_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                          - slide_text: Suite UA
+                            slide_big_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
+                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                          - slide_text: Presidential  UA
+                            slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                        room_options_btn_text: Discover more UA
+                        room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                        room_name_full: Standart room UA
+                      - room_link: deluxe
+                        room_name:
+                          - bold_text: '1'
+                          - thin_text: '1'
+                        room_area: '1'
+                        room_amount_persons: '1'
+                        room_bed_size: '1'
+                      - room_link: family-suite
+                        room_area: '2'
+                        room_amount_persons: '2'
+                        room_bed_size: '2'
+        '404':
+          $ref: '#/components/responses/404-error'
+      operationId: get-rooms
+      description: Get content of rooms page and info about rooms
+      parameters:
+        - $ref: '#/components/parameters/lang'
+  '/rooms/{slug}':
+    parameters:
+      - schema:
+          type: string
+          example: 'https://backend.undersunhotel.com.ua/api/rooms/standart'
+        name: slug
+        in: path
+        required: true
+        description: Room's slug
+    get:
+      summary: Get current room
+      tags:
+        - One room
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    status: success
+                    content:
+                      seo_title: SEO-заголовок
+                      meta_description: Мета-описание
+                      room_link: standart
+                      room_name:
+                        - bold_text: standart
+                        - thin_text: room
+                      room_area: 35 sq. m.
+                      room_amount_persons: 2 persons
+                      room_bed_size: king-size bed
+                      room_main_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                      room_description_title:
+                        - bold_text: A place of
+                        - thin_text: distinctive style
+                      room_description_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.'
+                      room_description_first_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                      room_description_second_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
+                      room_slider_items:
+                        - tab_title: bedroom
+                          tab_images:
+                            - /storage/slide7b5fb3f-1627288193g3ODS.svg
+                            - /storage/spa6ba207d-1627288201HpOco.svg
+                        - tab_title: living room
+                          tab_images:
+                            - /storage/small-image63b22f0-1627288195ec5fs.svg
+                            - /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                        - tab_title: bathroom
+                          tab_images:
+                            - /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                            - /storage/garden22c95e1-1627288182230Xx.jpg
+                      room_features_title: Features
+                      room_features_items:
+                        - feature_items:
+                            - Finest linen & towels
+                            - 'High-speed fibre wifi '
+                            - Smart TV with MultiChoice
+                          feature_title: 'Bed & Bath:'
+                        - feature_items:
+                            - 'Breakfast served from 08:00 till 10:30'
+                            - Well-stocked honesty bar & snacks
+                            - Housekeeping service
+                          feature_title: 'Service & Amenities:'
+                        - feature_items:
+                            - 'Breakfast served from 08:00 till 10:30'
+                            - Well-stocked honesty bar & snacks
+                            - Housekeeping service
+                          feature_title: 'Service & Amenities:'
+                      room_feature_big_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                      room_feature_small_image: /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                      room_options_small_title: Lorem ipsum dolor
+                      room_options_items:
+                        - slide_text: Family
+                          slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                          slide_small_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                        - slide_text: Junior suite
+                          slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                          slide_small_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                        - slide_text: Suite
+                          slide_big_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
+                          slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                        - slide_text: 'Presidential '
+                          slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                          slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      room_options_btn_text: Discover more
+                      room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                      room_name_full: Standart room
+                properties:
+                  status:
+                    type: string
+                    minLength: 1
+                  content:
+                    type: object
+                    properties:
+                      seo_title:
+                        type: string
+                        minLength: 1
+                      meta_description:
+                        type: string
+                        minLength: 1
+                      room_link:
+                        type: string
+                        minLength: 1
+                      room_name:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              bold_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                            required:
+                              - thin_text
+                      room_area:
+                        type: string
+                        minLength: 1
+                      room_amount_persons:
+                        type: string
+                        minLength: 1
+                      room_bed_size:
+                        type: string
+                        minLength: 1
+                      room_main_image:
+                        type: string
+                        minLength: 1
+                      room_description_title:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          - type: object
+                            properties:
+                              bold_text:
+                                type: string
+                                minLength: 1
+                          - type: object
+                            properties:
+                              thin_text:
+                                type: string
+                                minLength: 1
+                      room_description_text:
+                        type: string
+                        minLength: 1
+                      room_description_first_image:
+                        type: string
+                        minLength: 1
+                      room_description_second_image:
+                        type: string
+                        minLength: 1
+                      room_slider_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            tab_title:
+                              type: string
+                              minLength: 1
+                            tab_images:
+                              type: array
+                              items:
+                                type: string
+                      room_features_title:
+                        type: string
+                        minLength: 1
+                      room_features_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            feature_items:
+                              type: array
+                              items:
+                                type: string
+                            feature_title:
+                              type: string
+                              minLength: 1
+                      room_feature_big_image:
+                        type: string
+                        minLength: 1
+                      room_feature_small_image:
+                        type: string
+                        minLength: 1
+                      room_options_small_title:
+                        type: string
+                        minLength: 1
+                      room_options_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            slide_text:
+                              type: string
+                              minLength: 1
+                            slide_big_image:
+                              type: string
+                              minLength: 1
+                            slide_small_image:
+                              type: string
+                              minLength: 1
+                      room_options_btn_text:
+                        type: string
+                        minLength: 1
+                      room_preview_image:
+                        type: string
+                        minLength: 1
+                      room_name_full:
+                        type: string
+                        minLength: 1
+              examples:
+                example:
+                  value:
+                    status: success
+                    content:
+                      seo_title: SEO-заголовок UA
+                      meta_description: Мета-описание UA
+                      room_link: standart
+                      room_name:
+                        - bold_text: standart UA
+                        - thin_text: room UA
+                      room_area: 35 sq. m. UA
+                      room_amount_persons: 2 persons UA
+                      room_bed_size: king-size bed UA
+                      room_main_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                      room_description_title:
+                        - bold_text: A place of UA
+                        - thin_text: distinctive style UA
+                      room_description_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. UA'
+                      room_description_first_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                      room_description_second_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
+                      room_slider_items:
+                        - tab_title: bedroom UA
+                          tab_images:
+                            - /storage/slide7b5fb3f-1627288193g3ODS.svg
+                            - /storage/spa6ba207d-1627288201HpOco.svg
+                        - tab_title: living room UA
+                          tab_images:
+                            - /storage/small-image63b22f0-1627288195ec5fs.svg
+                            - /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                        - tab_title: bathroom UA
+                          tab_images:
+                            - /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                            - /storage/garden22c95e1-1627288182230Xx.jpg
+                      room_features_title: Features UA
+                      room_features_items:
+                        - feature_items:
+                            - Finest linen & towels UA
+                            - High-speed fibre wifi  UA
+                            - Smart TV with MultiChoice UA
+                          feature_title: 'Bed & Bath: UA'
+                        - feature_items:
+                            - 'Breakfast served from 08:00 till 10:30 UA'
+                            - Well-stocked honesty bar & snacks UA
+                            - Housekeeping service UA
+                          feature_title: 'Service & Amenities: UA'
+                        - feature_items:
+                            - 'Breakfast served from 08:00 till 10:31 UA'
+                            - Well-stocked honesty bar & snacks UA
+                            - Housekeeping service UA
+                          feature_title: 'Service & Amenities: UA'
+                      room_feature_big_image: /storage/small-image63b22f0-1627288195ec5fs.svg
+                      room_feature_small_image: /storage/rooms-30a24c2a-1627288192ShEXA.svg
+                      room_options_small_title: Lorem ipsum dolor UA
+                      room_options_items:
+                        - slide_text: Family UA
+                          slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                          slide_small_image: /storage/rooms-25f08515-16272881914RHMZ.svg
+                        - slide_text: Junior suite UA
+                          slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
+                          slide_small_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
+                        - slide_text: Suite UA
+                          slide_big_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
+                          slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                        - slide_text: Presidential  UA
+                          slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
+                          slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
+                      room_options_btn_text: Discover more UA
+                      room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                      room_name_full: Standart room UA
+        '404':
+          $ref: '#/components/responses/404-error'
+      operationId: get-rooms-slug
+      description: Get content of current room
+      parameters:
+        - $ref: '#/components/parameters/lang'
+  /parts:
+    get:
+      summary: Get pages parts
+      tags: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    status: success
+                    header:
+                      header_logo: /storage/map-markerb66fdb9-1627288188vqlbK.svg
+                      header_navigation:
+                        - link: /rooms
+                          name: Rooms
+                        - link: /spa
+                          name: SPA
+                        - link: /restaurant
+                          name: Restaraunt
+                        - link: /gallery
+                          name: Gallery
+                        - link: /leisure
+                          name: Leisure
+                        - link: /contacts
+                          name: Contacts
+                    footer:
+                      footer_logo: /storage/map-markerb66fdb9-1627288188vqlbK.svg
+                      footer_navigation:
+                        - link: /rooms
+                          name: Rooms
+                        - link: /spa
+                          name: SPA
+                        - link: /restaurant
+                          name: Restaurant
+                        - link: /gallery
+                          name: Gallery
+                        - link: /leisure
+                          name: Leisure
+                        - link: /contacts
+                          name: Contacts
+                      footer_address_text: 'г. Одесса, пр-т Гагарина, 25'
+                      footer_address_map: 'https://goo.gl/maps/cCWD8NCFHChNV1qx6'
+                      footer_tel: 0800 500 400
+                      footer_social:
+                        - social_image: /storage/phone03468b6-1627288188cIH2n.svg
+                          social_link: 'https://uk-ua.facebook.com/'
+                        - social_image: /storage/mastercard353a781-1627288188qaCZC.svg
+                          social_link: 'https://www.instagram.com/'
+                      footer_copyright: © All RIGHTS RESERVED 2020. undersun spa hotel
+                      footer_public_offer_text: Договор публичной оферты
+                      footer_public_offer_file: /storage/katalog-1627288219SlJdL.pdf
+                properties:
+                  status:
+                    type: string
+                    minLength: 1
+                  header:
+                    type: object
+                    properties:
+                      header_logo:
+                        type: string
+                        minLength: 1
+                      header_navigation:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            link:
+                              type: string
+                              minLength: 1
+                            name:
+                              type: string
+                              minLength: 1
+                  footer:
+                    type: object
+                    properties:
+                      footer_logo:
+                        type: string
+                        minLength: 1
+                      footer_navigation:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            link:
+                              type: string
+                              minLength: 1
+                            name:
+                              type: string
+                              minLength: 1
+                      footer_address_text:
+                        type: string
+                        minLength: 1
+                      footer_address_map:
+                        type: string
+                        minLength: 1
+                      footer_tel:
+                        type: string
+                        minLength: 1
+                      footer_social:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            social_image:
+                              type: string
+                              minLength: 1
+                            social_link:
+                              type: string
+                              minLength: 1
+                      footer_copyright:
+                        type: string
+                        minLength: 1
+                      footer_public_offer_text:
+                        type: string
+                        minLength: 1
+                      footer_public_offer_file:
+                        type: string
+                        minLength: 1
+        '404':
+          $ref: '#/components/responses/404-error'
+      operationId: get-parts
+      description: Get header and footer
+      parameters:
+        - $ref: '#/components/parameters/lang'
+components:
+  schemas: {}
+  parameters:
+    lang:
+      name: lang
+      in: query
+      required: false
+      schema:
+        type: string
+        default: ua
+        enum:
+          - en
+          - ru
+          - ua
+      description: Current language
+  responses:
+    404-error:
+      description: Error
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            properties:
+              status:
+                type: string
+                minLength: 1
+            required:
+              - status
+            x-examples:
+              example-1:
+                status: error
+          examples:
+            example:
+              value:
+                status: error
+tags:
+  - name: All rooms
+  - name: Main page
+  - name: One room
