@@ -406,83 +406,17 @@ paths:
                       bed_label: 'Bed type:'
                       view_label: 'View:'
                     rooms:
-                      - seo_title: SEO-заголовок
-                        meta_description: Мета-описание
-                        room_link: standart
-                        room_name:
-                          - bold_text: standart
-                          - thin_text: room
+                      - room_link: standart
+                        room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
+                        room_name_full: Standart room
                         room_area: 35 sq. m.
                         room_amount_persons: 2 persons
                         room_bed_size: king-size bed
-                        room_main_image: /storage/rooms-25f08515-16272881914RHMZ.svg
-                        room_description_title:
-                          - bold_text: A place of
-                          - thin_text: distinctive style
-                        room_description_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.'
-                        room_description_first_image: /storage/small-image63b22f0-1627288195ec5fs.svg
-                        room_description_second_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
-                        room_slider_items:
-                          - tab_title: bedroom
-                            tab_images:
-                              - /storage/slide7b5fb3f-1627288193g3ODS.svg
-                              - /storage/spa6ba207d-1627288201HpOco.svg
-                          - tab_title: living room
-                            tab_images:
-                              - /storage/small-image63b22f0-1627288195ec5fs.svg
-                              - /storage/rooms-30a24c2a-1627288192ShEXA.svg
-                          - tab_title: bathroom
-                            tab_images:
-                              - /storage/sports-ground75f852f-1627288204GqjOA.jpg
-                              - /storage/garden22c95e1-1627288182230Xx.jpg
-                        room_features_title: Features
-                        room_features_items:
-                          - feature_items:
-                              - Finest linen & towels
-                              - 'High-speed fibre wifi '
-                              - Smart TV with MultiChoice
-                            feature_title: 'Bed & Bath:'
-                          - feature_items:
-                              - 'Breakfast served from 08:00 till 10:30'
-                              - Well-stocked honesty bar & snacks
-                              - Housekeeping service
-                            feature_title: 'Service & Amenities:'
-                          - feature_items:
-                              - 'Breakfast served from 08:00 till 10:30'
-                              - Well-stocked honesty bar & snacks
-                              - Housekeeping service
-                            feature_title: 'Service & Amenities:'
-                        room_feature_big_image: /storage/small-image63b22f0-1627288195ec5fs.svg
-                        room_feature_small_image: /storage/rooms-30a24c2a-1627288192ShEXA.svg
-                        room_options_small_title: Lorem ipsum dolor
-                        room_options_items:
-                          - slide_text: Family
-                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
-                            slide_small_image: /storage/rooms-25f08515-16272881914RHMZ.svg
-                          - slide_text: Junior suite
-                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
-                            slide_small_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
-                          - slide_text: Suite
-                            slide_big_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
-                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
-                          - slide_text: 'Presidential '
-                            slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
-                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
-                        room_options_btn_text: Discover more
-                        room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
-                        room_name_full: Standart room
-                      - seo_title: '1'
-                        meta_description: '1'
-                        room_link: deluxe
-                        room_name:
-                          - bold_text: '1'
-                          - thin_text: '1'
+                      - room_link: deluxe
                         room_area: '1'
                         room_amount_persons: '1'
                         room_bed_size: '1'
-                      - seo_title: '2'
-                        meta_description: '2'
-                        room_link: family-suite
+                      - room_link: family-suite
                         room_area: '2'
                         room_amount_persons: '2'
                         room_bed_size: '2'
@@ -524,21 +458,12 @@ paths:
                         room_link:
                           type: string
                           minLength: 1
-                        room_name:
-                          type: array
-                          uniqueItems: true
-                          minItems: 1
-                          items:
-                            - type: object
-                              properties:
-                                bold_text:
-                                  type: string
-                                  minLength: 1
-                            - type: object
-                              properties:
-                                thin_text:
-                                  type: string
-                                  minLength: 1
+                        room_preview_image:
+                          type: string
+                          minLength: 1
+                        room_name_full:
+                          type: string
+                          minLength: 1
                         room_area:
                           type: string
                           minLength: 1
@@ -548,98 +473,6 @@ paths:
                         room_bed_size:
                           type: string
                           minLength: 1
-                        room_main_image:
-                          type: string
-                          minLength: 1
-                        room_description_title:
-                          type: array
-                          uniqueItems: true
-                          minItems: 1
-                          items:
-                            - type: object
-                              properties:
-                                bold_text:
-                                  type: string
-                                  minLength: 1
-                            - type: object
-                              properties:
-                                thin_text:
-                                  type: string
-                                  minLength: 1
-                        room_description_text:
-                          type: string
-                          minLength: 1
-                        room_description_first_image:
-                          type: string
-                          minLength: 1
-                        room_description_second_image:
-                          type: string
-                          minLength: 1
-                        room_slider_items:
-                          type: array
-                          uniqueItems: true
-                          minItems: 1
-                          items:
-                            type: object
-                            properties:
-                              tab_title:
-                                type: string
-                                minLength: 1
-                              tab_images:
-                                type: array
-                                items:
-                                  type: string
-                        room_features_title:
-                          type: string
-                          minLength: 1
-                        room_features_items:
-                          type: array
-                          uniqueItems: true
-                          minItems: 1
-                          items:
-                            type: object
-                            properties:
-                              feature_items:
-                                type: array
-                                items:
-                                  type: string
-                              feature_title:
-                                type: string
-                                minLength: 1
-                        room_feature_big_image:
-                          type: string
-                          minLength: 1
-                        room_feature_small_image:
-                          type: string
-                          minLength: 1
-                        room_options_small_title:
-                          type: string
-                          minLength: 1
-                        room_options_items:
-                          type: array
-                          uniqueItems: true
-                          minItems: 1
-                          items:
-                            type: object
-                            properties:
-                              slide_text:
-                                type: string
-                                minLength: 1
-                              slide_big_image:
-                                type: string
-                                minLength: 1
-                              slide_small_image:
-                                type: string
-                                minLength: 1
-                        room_options_btn_text:
-                          type: string
-                          minLength: 1
-                        room_preview_image:
-                          type: string
-                          minLength: 1
-                        room_name_full:
-                          type: string
-                          minLength: 1
                       required:
                         - room_link
               examples:
@@ -647,81 +480,21 @@ paths:
                   value:
                     status: success
                     rooms_page:
-                      seo_title: SEO-заголовок UA
-                      meta_description: Мета-описание UA
-                      hero_title: Accommodations UA
-                      hero_text: Kick Your Boots Off and Stay Awhile UA
-                      area_label: 'Average area: UA'
-                      bed_label: 'Bed type: UA'
-                      view_label: 'View: UA'
+                      seo_title: SEO-заголовок
+                      meta_description: Мета-описание
+                      hero_title: Accommodations
+                      hero_text: Kick Your Boots Off and Stay Awhile
+                      area_label: 'Average area:'
+                      bed_label: 'Bed type:'
+                      view_label: 'View:'
                     rooms:
                       - room_link: standart
-                        room_name:
-                          - bold_text: standart UA
-                          - thin_text: room UA
-                        room_area: 35 sq. m. UA
-                        room_amount_persons: 2 persons UA
-                        room_bed_size: king-size bed UA
-                        room_main_image: /storage/rooms-25f08515-16272881914RHMZ.svg
-                        room_description_title:
-                          - bold_text: A place of UA
-                          - thin_text: distinctive style UA
-                        room_description_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. UA'
-                        room_description_first_image: /storage/small-image63b22f0-1627288195ec5fs.svg
-                        room_description_second_image: /storage/restaurant-img660d896-1627288188VWmTQ.svg
-                        room_slider_items:
-                          - tab_title: bedroom UA
-                            tab_images:
-                              - /storage/slide7b5fb3f-1627288193g3ODS.svg
-                              - /storage/spa6ba207d-1627288201HpOco.svg
-                          - tab_title: living room UA
-                            tab_images:
-                              - /storage/small-image63b22f0-1627288195ec5fs.svg
-                              - /storage/rooms-30a24c2a-1627288192ShEXA.svg
-                          - tab_title: bathroom UA
-                            tab_images:
-                              - /storage/sports-ground75f852f-1627288204GqjOA.jpg
-                              - /storage/garden22c95e1-1627288182230Xx.jpg
-                        room_features_title: Features UA
-                        room_features_items:
-                          - feature_items:
-                              - Finest linen & towels UA
-                              - High-speed fibre wifi  UA
-                              - Smart TV with MultiChoice UA
-                            feature_title: 'Bed & Bath: UA'
-                          - feature_items:
-                              - 'Breakfast served from 08:00 till 10:30 UA'
-                              - Well-stocked honesty bar & snacks UA
-                              - Housekeeping service UA
-                            feature_title: 'Service & Amenities: UA'
-                          - feature_items:
-                              - 'Breakfast served from 08:00 till 10:31 UA'
-                              - Well-stocked honesty bar & snacks UA
-                              - Housekeeping service UA
-                            feature_title: 'Service & Amenities: UA'
-                        room_feature_big_image: /storage/small-image63b22f0-1627288195ec5fs.svg
-                        room_feature_small_image: /storage/rooms-30a24c2a-1627288192ShEXA.svg
-                        room_options_small_title: Lorem ipsum dolor UA
-                        room_options_items:
-                          - slide_text: Family UA
-                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
-                            slide_small_image: /storage/rooms-25f08515-16272881914RHMZ.svg
-                          - slide_text: Junior suite UA
-                            slide_big_image: /storage/slide7b5fb3f-1627288193g3ODS.svg
-                            slide_small_image: /storage/sports-ground75f852f-1627288204GqjOA.jpg
-                          - slide_text: Suite UA
-                            slide_big_image: /storage/main-bge242d4e-1627288188Bj5iQ.jpg
-                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
-                          - slide_text: Presidential  UA
-                            slide_big_image: /storage/garden22c95e1-1627288182230Xx.jpg
-                            slide_small_image: /storage/small-img577a1bc-1627288195kBycU.svg
-                        room_options_btn_text: Discover more UA
                         room_preview_image: /storage/rooms-1b82ce16-1627288190d7Nqm.svg
-                        room_name_full: Standart room UA
+                        room_name_full: Standart room
+                        room_area: 35 sq. m.
+                        room_amount_persons: 2 persons
+                        room_bed_size: king-size bed
                       - room_link: deluxe
-                        room_name:
-                          - bold_text: '1'
-                          - thin_text: '1'
                         room_area: '1'
                         room_amount_persons: '1'
                         room_bed_size: '1'
