@@ -15,7 +15,7 @@ class MainPageController extends Controller
 
         $content = MainPageModel::getMainPage();
 
-        $rooms = RoomModel::getAllRooms(['room_link', 'room_main_slider_image', 'room_main_slider_text']);
+        $rooms = RoomModel::getAllRooms(['room_link', 'room_preview_image', 'room_name_full']);
 
         $content['rooms_items'] = $rooms;
 
