@@ -386,8 +386,6 @@ paths:
   /rooms:
     get:
       summary: Get rooms page
-      tags:
-        - All rooms
       responses:
         '200':
           description: Success
@@ -737,19 +735,18 @@ paths:
       description: Get content of rooms page and info about rooms
       parameters:
         - $ref: '#/components/parameters/lang'
+      tags:
+        - Rooms
   '/rooms/{slug}':
     parameters:
       - schema:
           type: string
-          example: 'https://backend.undersunhotel.com.ua/api/rooms/standart'
         name: slug
         in: path
         required: true
-        description: Room's slug
+        description: Current room link
     get:
       summary: Get current room
-      tags:
-        - One room
       responses:
         '200':
           description: Success
@@ -1037,10 +1034,13 @@ paths:
       description: Get content of current room
       parameters:
         - $ref: '#/components/parameters/lang'
+      tags:
+        - Rooms
   /parts:
     get:
       summary: Get pages parts
-      tags: []
+      tags:
+        - Pages parts
       responses:
         '200':
           description: Success
@@ -1209,6 +1209,6 @@ components:
               value:
                 status: error
 tags:
-  - name: All rooms
   - name: Main page
-  - name: One room
+  - name: Pages parts
+  - name: Rooms
