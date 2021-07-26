@@ -119,7 +119,7 @@ class RoomModel extends Model
             $content = [];
 
             foreach ($rooms as $room){
-                $translatedData = $room->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at', 'seo_title', 'meta_description']);
+                $translatedData = $room->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']);
                 $content[] = self::normalizeData($translatedData);
             }
             return $content;
