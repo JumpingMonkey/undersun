@@ -35,8 +35,8 @@ class RoomModel extends Model
         'room_options_small_title',
         'room_options_items',
         'room_options_btn_text',
-        'room_main_slider_image',
-        'room_main_slider_text',
+        'room_preview_image',
+        'room_name_full',
     ];
 
     public $translatable = [
@@ -54,7 +54,7 @@ class RoomModel extends Model
         'room_options_small_title',
         'room_options_items',
         'room_options_btn_text',
-        'room_main_slider_text',
+        'room_name_full',
     ];
 
     public $mediaToUrl = [
@@ -63,7 +63,7 @@ class RoomModel extends Model
         'room_description_second_image',
         'room_feature_big_image',
         'room_feature_small_image',
-        'room_main_slider_image',
+        'room_preview_image',
         'room_options_items',
         'room_slider_items',
         'tab_images',
