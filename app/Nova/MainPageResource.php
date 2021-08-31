@@ -85,6 +85,7 @@ class MainPageResource extends Resource
                         ->button('Добавить слайд'),
 
                     MediaLibrary::make('Изображение кнопки "Связаться с нами"', 'hero_contacts_us')->hideFromIndex(),
+                    Text::make('Ссылка для кнопки "Связаться с нами"', 'hero_contacts_us_link')->hideFromIndex(),
 
 
                 ]),

@@ -21,6 +21,7 @@ class MainPageModel extends Model
         'hero_text',
         'hero_slider',
         'hero_contacts_us',
+        'hero_contacts_us_link',
         'introduce_small_title',
         'introduce_big_title',
         'introduce_text',
