@@ -22,7 +22,8 @@ class FooterModel extends Model
         'footer_social',
         'footer_copyright',
         'footer_public_offer_text',
-        'footer_public_offer_file'
+        'footer_public_offer_file',
+        'booking_btn_text'
     ];
 
     public $translatable = [
@@ -30,7 +31,8 @@ class FooterModel extends Model
         'footer_address_text',
         'footer_copyright',
         'footer_public_offer_text',
-        'footer_public_offer_file'
+        'footer_public_offer_file',
+        'booking_btn_text'
     ];
 
     public $mediaToUrl = [

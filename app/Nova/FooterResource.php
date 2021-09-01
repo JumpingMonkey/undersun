@@ -87,9 +87,14 @@ class FooterResource extends Resource
 
                 ])->button('Добавить соц. сеть'),
 
+
+            Text::make('Текст на кнопке для бронирования', 'booking_btn_text'),
+
             Text::make('Текст блока с авторскими правами', 'footer_copyright')->hideFromIndex(),
             Text::make('Текст ссылки на публичную оферту', 'footer_public_offer_text')->hideFromIndex(),
             MediaLibrary::make('Файл договора публичной оферты', 'footer_public_offer_file')->hideFromIndex(),
+
+
 
         ];
     }

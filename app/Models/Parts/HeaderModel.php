@@ -18,10 +18,12 @@ class HeaderModel extends Model
     protected $fillable = [
         'header_logo',
         'header_navigation',
+        'booking_btn_text'
     ];
 
     public $translatable = [
         'header_navigation',
+        'booking_btn_text'
     ];
 
     public $mediaToUrl = [

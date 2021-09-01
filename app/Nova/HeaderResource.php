@@ -75,6 +75,8 @@ class HeaderResource extends Resource
 
                 ])->button('Добавить пункт'),
 
+            Text::make('Текст на кнопке для бронирования', 'booking_btn_text'),
+
         ];
     }
 
