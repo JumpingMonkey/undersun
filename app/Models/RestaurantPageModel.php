@@ -18,6 +18,7 @@ class RestaurantPageModel extends Model
         'meta_description',
         'hero_title',
         'hero_bottom_text',
+        'hero_bg_img',
         'int_bold_title',
         'int_thin_title',
         'int_main_description',
@@ -78,6 +79,7 @@ class RestaurantPageModel extends Model
     ];
 
     public $mediaToUrl = [
+        'hero_bg_img',
         'int_first_img',
         'int_second_img',
         'int_third_img',

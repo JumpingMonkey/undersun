@@ -20,6 +20,7 @@ class CreateRestaurantPageModelsTable extends Migration
             $table->json('meta_description');
             $table->json('hero_title');
             $table->json('hero_bottom_text');
+            $table->string('hero_bg_img')->nullable();
             $table->json('int_bold_title');
             $table->json('int_thin_title');
             $table->string('int_first_img')->nullable();

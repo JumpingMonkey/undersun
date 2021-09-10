@@ -63,7 +63,8 @@ class RestaurantPageResource extends Resource
             Tabs::make('Блоки страницы ресторана', [
                 Tab::make('Главный блок', [
                     Text::make('Заголовок', 'hero_title'),
-                    Text::make('Подпись внизу блока', 'hero_bottom_text')->hideFromIndex()
+                    Text::make('Подпись внизу блока', 'hero_bottom_text')->hideFromIndex(),
+                    MediaLibrary::make('Фоновое изображение', 'hero_bg_img')->hideFromIndex(),
                 ]),
                 Tab::make('Блок интуиция', [
                     Text::make('Жирный заголовок', 'int_bold_title')->hideFromIndex(),
