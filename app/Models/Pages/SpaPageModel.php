@@ -18,6 +18,7 @@ class SpaPageModel extends Model
         'meta_description',
         'hero_title',
         'hero_bottom_text',
+        'hero_bg_img',
         'block2_bold_title_1',
         'block2_thin_title_1',
         'block2_bold_title_2',
@@ -28,6 +29,7 @@ class SpaPageModel extends Model
         'big_img',
         'text_bottom',
         'btn_text',
+        'block2_btn_link',
         'block1_title',
         'block1_with_left_img',
         'block2_title',
@@ -39,6 +41,7 @@ class SpaPageModel extends Model
         'block4_sub_title',
         'block4_description',
         'block4_btn_text',
+        'block4_btn_link',
         'block4_first_img',
         'block4_second_img',
 
@@ -53,6 +56,7 @@ class SpaPageModel extends Model
         'block2_bold_title_2',
         'block2_thin_title_2',
         'text_bottom',
+        'block2_btn_link',
         'btn_text',
         'block1_title',
         'block1_with_left_img',
@@ -65,10 +69,11 @@ class SpaPageModel extends Model
         'block4_sub_title',
         'block4_description',
         'block4_btn_text',
+        'block4_btn_link',
     ];
 
     public $mediaToUrl = [
-
+        'hero_bg_img',
         'mini_first_img',
         'mini_second_img',
         'mini_third_img',

@@ -19,6 +19,7 @@ class CreateSpaPageModelsTable extends Migration
             $table->json('meta_description')->nullable();
             $table->json('hero_title')->nullable();
             $table->json('hero_bottom_text')->nullable();
+            $table->string('hero_bg_img')->nullable();
             $table->json('block2_bold_title_1')->nullable();
             $table->json('block2_thin_title_1')->nullable();
             $table->json('block2_bold_title_2')->nullable();
@@ -29,6 +30,7 @@ class CreateSpaPageModelsTable extends Migration
             $table->string('big_img')->nullable();
             $table->json('text_bottom')->nullable();
             $table->json('btn_text')->nullable();
+            $table->json('block2_btn_link')->nullable();
             $table->json('block1_title')->nullable();
             $table->json('block1_with_left_img')->nullable();
             $table->json('block2_title')->nullable();
@@ -40,6 +42,7 @@ class CreateSpaPageModelsTable extends Migration
             $table->json('block4_sub_title')->nullable();
             $table->json('block4_description')->nullable();
             $table->json('block4_btn_text')->nullable();
+            $table->json('block4_btn_link')->nullable();
             $table->string('block4_first_img')->nullable();
             $table->string('block4_second_img')->nullable();
             $table->timestamps();

@@ -89,7 +89,7 @@ class RestaurantPageResource extends Resource
                     MediaLibrary::make('Фото бара', 'bar_img_bg')->hideFromIndex(),
                     Text::make('Левый текст', 'bar_left_text')->hideFromIndex(),
                     Text::make('Центральный текст', 'bar_center_text')->hideFromIndex(),
-                    Text::make('Описание под центральным заголовком', 'bar_center_desc')->hideFromIndex(),
+                    Text::make('Описание под центральным текстом', 'bar_center_desc')->hideFromIndex(),
                     Text::make('Правый текст', 'bar_right_text')->hideFromIndex(),
                 ]),
                 Tab::make('Блок про отличительный стиль', [

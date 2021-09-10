@@ -63,7 +63,8 @@ class SpaPageResource extends Resource
             Tabs::make('Блоки страницы ресторана', [
                 Tab::make('Главный блок', [
                     Text::make('Заголовок', 'hero_title'),
-                    Text::make('Подпись внизу блока', 'hero_bottom_text')->hideFromIndex()
+                    Text::make('Подпись внизу блока', 'hero_bottom_text')->hideFromIndex(),
+                    MediaLibrary::make('Фоновое изображение', 'hero_bg_img')->hideFromIndex(),
                 ]),
                 Tab::make('Второй блок', [
                     Text::make('Жирный заголовок 1', 'block2_bold_title_1')->hideFromIndex(),
@@ -78,6 +79,7 @@ class SpaPageResource extends Resource
 
                     Textarea::make('Текст под фото', 'text_bottom')->hideFromIndex(),
                     Text::make('Текст кнопки', 'btn_text')->hideFromIndex(),
+                    Text::make('Ссылка кнопки', 'block2_btn_link')->hideFromIndex(),
                 ]),
                 Tab::make('Третий блок', [
                     Text::make('Заголовок 1 блока', 'block1_title')->hideFromIndex(),
@@ -111,6 +113,7 @@ class SpaPageResource extends Resource
                     Text::make('Подзаголовок', 'block4_sub_title')->hideFromIndex(),
                     Textarea::make('Описание', 'block4_description')->hideFromIndex(),
                     Text::make('Текст кнопки', 'block4_btn_text')->hideFromIndex(),
+                    Text::make('Ссылка кнопки', 'block4_btn_link')->hideFromIndex(),
                     MediaLibrary::make('Маленькое изображение', 'block4_first_img')->hideFromIndex(),
                     MediaLibrary::make('Большое изображение', 'block4_second_img')->hideFromIndex(),
                 ])
