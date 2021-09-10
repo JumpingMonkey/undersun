@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Models\Pages\MainPageModel;
 use ClassicO\NovaMediaLibrary\MediaLibrary;
 use Digitalcloud\MultilingualNova\Multilingual;
 use Eminiarts\Tabs\Tab;
@@ -23,7 +24,7 @@ class MainPageResource extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Pages\MainPageModel::class;
+    public static $model = MainPageModel::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
