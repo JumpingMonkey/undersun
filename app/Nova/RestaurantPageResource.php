@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class RestaurantPageResource extends Resource
 {
@@ -101,7 +102,16 @@ class RestaurantPageResource extends Resource
                     MediaLibrary::make('Правое фото', 'style_right_img')->hideFromIndex(),
                 ]),
                 Tab::make('Фотогалерея', [
-                    MediaLibrary::make('Фото', 'gallery')->array()->hideFromIndex()
+                    Flexible::make('Фото', 'gallery')
+                        ->addLayout('Одна локация', 'one_location', [
+                            Text::make('Название локации', 'location_name'),
+                            Flexible::make('Одно фото', 'img')
+                                ->addLayout('Одно фото', 'img', [
+                                    MediaLibrary::make('Фото', 'gallery'),
+                                ])
+
+
+                        ])
                 ]),
                 Tab::make('Блок про отличительный стиль 2', [
                     Text::make('Жирный заголовок', 'style2_bold_title')->hideFromIndex(),
