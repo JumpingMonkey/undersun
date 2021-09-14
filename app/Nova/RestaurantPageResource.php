@@ -106,7 +106,7 @@ class RestaurantPageResource extends Resource
                     Flexible::make('Фото', 'gallery')
                         ->addLayout('Одна локация', 'one_location', [
                             Text::make('Название локации', 'location_name'),
-                            Flexible::make('Одно фото', 'img')
+                            Flexible::make('Фотогалерея', 'img')
                                 ->addLayout('Одно фото', 'img', [
                                     MediaLibrary::make('Фото', 'gallery'),
                                 ])

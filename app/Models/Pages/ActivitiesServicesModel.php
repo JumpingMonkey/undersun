@@ -5,6 +5,7 @@ namespace App\Models\Pages;
 use App\Traits\TranslateAndConvertMediaUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Spatie\Translatable\HasTranslations;
 
 class ActivitiesServicesModel extends Model
@@ -56,4 +57,35 @@ class ActivitiesServicesModel extends Model
         '2bottom_title',
         '2bottom_description',
     ];
+
+    public $mediaToUrl = [
+        'hero_bg_img',
+        'top_left_img',
+        'bottom_right_img',
+        'bg_img',
+        'small_img',
+        '2top_left_img',
+        '2bottom_right_img',
+    ];
+
+    public static function normalizeData($object){
+
+        return $object;
+
+    }
+
+    public static function getActivitiPage(){
+        try{
+
+            $data = ActivitiesServicesModel::firstOrFail();
+
+            $content = self::normalizeData($data->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+
+            return $content;
+
+        } catch (\Exception $ex){
+            throw new ModelNotFoundException();
+        }
+
+    }
 }

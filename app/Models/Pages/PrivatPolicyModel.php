@@ -5,6 +5,7 @@ namespace App\Models\Pages;
 use App\Traits\TranslateAndConvertMediaUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Spatie\Translatable\HasTranslations;
 
 class PrivatPolicyModel extends Model
@@ -35,5 +36,26 @@ class PrivatPolicyModel extends Model
         'title_block_3',
         'desc_block_3'
     ];
+
+    public static function normalizeData($object){
+
+        return $object;
+
+    }
+
+    public static function getPolicyPage(){
+        try{
+
+            $data = PrivatPolicyModel::firstOrFail();
+
+            $content = self::normalizeData($data->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+
+            return $content;
+
+        } catch (\Exception $ex){
+            throw new ModelNotFoundException();
+        }
+
+    }
 
 }
