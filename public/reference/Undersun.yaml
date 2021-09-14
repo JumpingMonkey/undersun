@@ -1212,65 +1212,7 @@ paths:
                       block4_second_img:
                         type: string
                         minLength: 1
-              examples:
-                example-1:
-                  value:
-                    status: success
-                    content:
-                      seo_title: '3'
-                      meta_description: '3'
-                      hero_title: '3'
-                      hero_bottom_text: '3'
-                      hero_bg_img: /storage/screenshot-13-1631113696ac30o.png
-                      block2_bold_title_1: '3'
-                      block2_thin_title_1: '3'
-                      block2_bold_title_2: '3'
-                      block2_thin_title_2: '3'
-                      mini_first_img: /storage/screenshot-13-1631113696ac30o.png
-                      mini_second_img: /storage/screenshot-12-1631113751Fjo9h.png
-                      mini_third_img: /storage/screenshot-13-1631113696ac30o.png
-                      big_img: /storage/screenshot-12-1631113751Fjo9h.png
-                      text_bottom: '3'
-                      btn_text: '3'
-                      block2_btn_link: '3'
-                      block1_title: '3'
-                      block1_with_left_img:
-                        - big_img: /storage/screenshot-13-1631113696ac30o.png
-                          small_img: /storage/screenshot-12-1631113751Fjo9h.png
-                          sub_title: '3'
-                          description: '3'
-                        - big_img: /storage/screenshot-13-1631113696ac30o.png
-                          small_img: /storage/screenshot-12-1631113751Fjo9h.png
-                          sub_title: '3'
-                          description: '3'
-                      block2_title: '3'
-                      block2_with_right_img:
-                        - big_img: /storage/screenshot-13-1631113696ac30o.png
-                          small_img: /storage/screenshot-12-1631113751Fjo9h.png
-                          sub_title: '3'
-                          description: '3'
-                        - big_img: /storage/screenshot-13-1631113696ac30o.png
-                          small_img: /storage/screenshot-12-1631113751Fjo9h.png
-                          sub_title: '3'
-                          description: '3'
-                      block3_title: '3'
-                      block3_with_left_img:
-                        - big_img: /storage/screenshot-13-1631113696ac30o.png
-                          small_img: /storage/screenshot-12-1631113751Fjo9h.png
-                          sub_title: '3'
-                          description: '3'
-                        - big_img: /storage/screenshot-13-1631113696ac30o.png
-                          small_img: /storage/screenshot-12-1631113751Fjo9h.png
-                          sub_title: '3'
-                          description: '3'
-                      block4_bold_title: '1'
-                      block4_thin_title: '1'
-                      block4_sub_title: '1'
-                      block4_description: '1'
-                      block4_btn_text: '1'
-                      block4_btn_link: '1'
-                      block4_first_img: /storage/screenshot-13-1631113696ac30o.png
-                      block4_second_img: /storage/screenshot-12-1631113751Fjo9h.png
+              examples: {}
         '404':
           $ref: '#/components/responses/404-error'
       operationId: get-spa
