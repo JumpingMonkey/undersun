@@ -1059,15 +1059,6 @@ paths:
                     minLength: 1
                   content:
                     type: object
-                    required:
-                      - block4_bold_title
-                      - block4_thin_title
-                      - block4_sub_title
-                      - block4_description
-                      - block4_btn_text
-                      - block4_btn_link
-                      - block4_first_img
-                      - block4_second_img
                     properties:
                       seo_title:
                         type: string
@@ -1183,11 +1174,6 @@ paths:
                             description:
                               type: string
                               minLength: 1
-                          required:
-                            - big_img
-                            - small_img
-                            - sub_title
-                            - description
                       block4_bold_title:
                         type: string
                         minLength: 1
