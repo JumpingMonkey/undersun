@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Traits\TranslateAndConvertMediaUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Spatie\Translatable\HasTranslations;
 
 class RestaurantPageModel extends Model
@@ -92,4 +93,41 @@ class RestaurantPageModel extends Model
         'style2_large_img',
         'gallery'
     ];
+
+    public static function normalizeData($object){
+
+        self::getNormalizedField($object, 'gallery', "img", true, true);
+
+        $data = [];
+        $bigdata = [];
+        foreach ($object['gallery'] as $elem){
+
+            foreach ($elem['img'] as $key => $value) {
+                $data[$key . "_" . $value['layout']] =  $value['attributes']['gallery'];
+            }
+            $data['location_name'] = $elem['location_name'];
+            $bigdata[] = $data;
+        }
+
+        $object['gallery'] = $bigdata;
+
+
+        return $object;
+
+    }
+
+    public static function getRestaurantPage(){
+        try{
+
+            $data = RestaurantPageModel::firstOrFail();
+
+            $content = self::normalizeData($data->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+
+            return $content;
+
+        } catch (\Exception $ex){
+            throw new ModelNotFoundException();
+        }
+
+    }
 }

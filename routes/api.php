@@ -4,6 +4,7 @@ use App\Http\Controllers\PagePartsController;
 use App\Http\Controllers\Pages\ActivitiesServiceController;
 use App\Http\Controllers\Pages\MainPageController;
 use App\Http\Controllers\Pages\PrivatPolicyController;
+use App\Http\Controllers\Pages\RestaurantPageController;
 use App\Http\Controllers\Pages\SpaPageController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Http\Request;
@@ -28,4 +29,5 @@ Route::middleware('locale')->group(function (){
     Route::get('/activities', [ActivitiesServiceController::class, 'index']);
     Route::get('/policy', [PrivatPolicyController::class, 'index']);
     Route::get('/spa', [SpaPageController::class, 'index']);
+    Route::get('/restaurant', [RestaurantPageController::class, 'index']);
 });

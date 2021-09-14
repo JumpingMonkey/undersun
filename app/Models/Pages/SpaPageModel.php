@@ -90,6 +90,10 @@ class SpaPageModel extends Model
 
     public static function normalizeData($object){
 
+        self::getNormalizedField($object, 'block1_with_left_img', "big_img", true, true);
+        self::getNormalizedField($object, 'block2_with_right_img', "big_img", true, true);
+        self::getNormalizedField($object, 'block3_with_left_img', "big_img", true, true);
+
         return $object;
 
     }
