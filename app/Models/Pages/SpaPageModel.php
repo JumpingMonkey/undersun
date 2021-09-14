@@ -5,6 +5,7 @@ namespace App\Models\Pages;
 use App\Traits\TranslateAndConvertMediaUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Spatie\Translatable\HasTranslations;
 
 class SpaPageModel extends Model
@@ -27,6 +28,7 @@ class SpaPageModel extends Model
         'mini_second_img',
         'mini_third_img',
         'big_img',
+        'small_img',
         'text_bottom',
         'btn_text',
         'block2_btn_link',
@@ -78,10 +80,32 @@ class SpaPageModel extends Model
         'mini_second_img',
         'mini_third_img',
         'big_img',
+        'small_img',
         'block1_with_left_img',
         'block2_with_right_img',
         'block3_with_left_img',
         'block4_first_img',
         'block4_second_img',
     ];
+
+    public static function normalizeData($object){
+
+        return $object;
+
+    }
+
+    public static function getSpaPage(){
+        try{
+
+            $data = SpaPageModel::firstOrFail();
+
+            $content = self::normalizeData($data->getAllWithMediaUrlWithout(['id', 'created_at', 'updated_at']));
+
+            return $content;
+
+        } catch (\Exception $ex){
+            throw new ModelNotFoundException();
+        }
+
+    }
 }
