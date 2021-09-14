@@ -1198,7 +1198,53 @@ paths:
                       block4_second_img:
                         type: string
                         minLength: 1
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    status: string
+                    content:
+                      seo_title: string
+                      meta_description: string
+                      hero_title: string
+                      hero_bottom_text: string
+                      hero_bg_img: string
+                      block2_bold_title_1: string
+                      block2_thin_title_1: string
+                      block2_bold_title_2: string
+                      block2_thin_title_2: string
+                      mini_first_img: string
+                      mini_second_img: string
+                      mini_third_img: string
+                      big_img: string
+                      text_bottom: string
+                      btn_text: string
+                      block2_btn_link: string
+                      block1_title: string
+                      block1_with_left_img:
+                        - big_img: string
+                          small_img: string
+                          sub_title: string
+                          description: string
+                      block2_title: string
+                      block2_with_right_img:
+                        - big_img: string
+                          small_img: string
+                          sub_title: string
+                          description: string
+                      block3_title: string
+                      block3_with_left_img:
+                        - big_img: string
+                          small_img: string
+                          sub_title: string
+                          description: string
+                      block4_bold_title: string
+                      block4_thin_title: string
+                      block4_sub_title: string
+                      block4_description: string
+                      block4_btn_text: string
+                      block4_btn_link: string
+                      block4_first_img: string
+                      block4_second_img: string
         '404':
           $ref: '#/components/responses/404-error'
       operationId: get-spa
