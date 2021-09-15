@@ -17,7 +17,8 @@ class CreateSpaPageModelsTable extends Migration
             $table->id();
             $table->json('seo_title')->nullable();
             $table->json('meta_description')->nullable();
-            $table->json('hero_title')->nullable();
+            $table->json('hero_title_bold')->nullable();
+            $table->json('hero_title_thin')->nullable();
             $table->json('hero_bottom_text')->nullable();
             $table->string('hero_bg_img')->nullable();
             $table->json('block2_bold_title_1')->nullable();

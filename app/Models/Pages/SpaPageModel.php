@@ -17,7 +17,8 @@ class SpaPageModel extends Model
     protected $fillable = [
         'seo_title',
         'meta_description',
-        'hero_title',
+        'hero_title_bold',
+        'hero_title_thin',
         'hero_bottom_text',
         'hero_bg_img',
         'block2_bold_title_1',
@@ -51,7 +52,8 @@ class SpaPageModel extends Model
     public $translatable = [
         'seo_title',
         'meta_description',
-        'hero_title',
+        'hero_title_bold',
+        'hero_title_thin',
         'hero_bottom_text',
         'block2_bold_title_1',
         'block2_thin_title_1',
