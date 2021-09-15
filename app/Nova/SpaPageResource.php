@@ -62,8 +62,8 @@ class SpaPageResource extends Resource
 
             Tabs::make('Блоки страницы ресторана', [
                 Tab::make('Главный блок', [
-                    Text::make('Заголовок', 'hero_title_bold'),
-                    Text::make('Заголовок', 'hero_title_thin'),
+                    Text::make('Толстый заголовок', 'hero_title_bold'),
+                    Text::make('Тонкий заголовок', 'hero_title_thin'),
                     Text::make('Подпись внизу блока', 'hero_bottom_text')->hideFromIndex(),
                     MediaLibrary::make('Фоновое изображение', 'hero_bg_img')->hideFromIndex(),
                 ]),
