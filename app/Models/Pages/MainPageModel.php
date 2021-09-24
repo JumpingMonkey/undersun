@@ -17,6 +17,7 @@ class MainPageModel extends Model
     protected $fillable = [
         'seo_title',
         'meta_description',
+        'hero_bg_img',
         'hero_title',
         'hero_text',
         'hero_slider',
@@ -74,6 +75,7 @@ class MainPageModel extends Model
     ];
 
     public $mediaToUrl = [
+        'hero_bg_img',
         'hero_slider',
         'value',
         'hero_contacts_us',

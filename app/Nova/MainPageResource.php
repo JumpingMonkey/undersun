@@ -68,6 +68,8 @@ class MainPageResource extends Resource
             Tabs::make('Блоки главной страницы', [
                 Tab::make('Главный блок', [
 
+                    MediaLibrary::make('Фоновое изображение', 'hero_bg_img')->hideFromIndex(),
+
                     Flexible::make('Заголовок', 'hero_title')
                         ->addLayout('Толстый текст', 'bold_text', [
                             Text::make('Текст', 'value'),
@@ -86,7 +88,10 @@ class MainPageResource extends Resource
                         ->button('Добавить слайд'),
 
                     MediaLibrary::make('Изображение кнопки "Связаться с нами"', 'hero_contacts_us')->hideFromIndex(),
-                    Text::make('Ссылка для кнопки "Связаться с нами"', 'hero_contacts_us_link')->hideFromIndex(),
+                    Text::make('Ссылка для кнопки "Связаться с нами"', 'hero_contacts_us_link')
+                        ->required()
+                        ->updateRules('required')
+                        ->hideFromIndex(),
 
 
                 ]),
