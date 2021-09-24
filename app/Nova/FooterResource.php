@@ -66,9 +66,9 @@ class FooterResource extends Resource
                             '/rooms' => '/rooms',
                             '/spa' => '/spa',
                             '/restaurant' => '/restaurant',
-                            '/gallery' => '/gallery',
                             '/leisure' => '/leisure',
-                            '/contacts' => '/contacts'
+                            '/contacts' => '/contacts',
+                            '/policy' => '/policy',
                         ]
                     )
                         ->displayUsingLabels()
