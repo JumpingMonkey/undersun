@@ -33,12 +33,9 @@ class SpaPageModel extends Model
         'text_bottom',
         'btn_text',
         'block2_btn_link',
-        'block1_title',
-        'block1_with_left_img',
-        'block2_title',
-        'block2_with_right_img',
-        'block3_title',
-        'block3_with_left_img',
+
+        'block3_service_blocks',
+
         'block4_bold_title',
         'block4_thin_title',
         'block4_sub_title',
@@ -62,18 +59,13 @@ class SpaPageModel extends Model
         'text_bottom',
         'block2_btn_link',
         'btn_text',
-        'block1_title',
-        'block1_with_left_img',
-        'block2_title',
-        'block2_with_right_img',
-        'block3_title',
-        'block3_with_left_img',
         'block4_bold_title',
         'block4_thin_title',
         'block4_sub_title',
         'block4_description',
         'block4_btn_text',
         'block4_btn_link',
+        'block3_service_blocks'
     ];
 
     public $mediaToUrl = [
@@ -88,13 +80,37 @@ class SpaPageModel extends Model
         'block3_with_left_img',
         'block4_first_img',
         'block4_second_img',
+        'block3_service_blocks',
+        'big_img_left',
+        'small_img_right',
+        'big_img_right',
+        'small_img_left',
     ];
 
     public static function normalizeData($object){
 
-        self::getNormalizedField($object, 'block1_with_left_img', "big_img", true, true);
-        self::getNormalizedField($object, 'block2_with_right_img', "big_img", true, true);
-        self::getNormalizedField($object, 'block3_with_left_img', "big_img", true, true);
+        self::getNormalizedField($object, 'block3_service_blocks', "big_img_left", true, false);
+
+        $bigdata = [];
+        if (!empty($object['block3_service_blocks'])){
+            foreach ($object['block3_service_blocks'] as $mainKey => $elem){
+                $data = [];
+                foreach ($elem['slider'] as $key => $value) {
+                    $data[$key . "_" . $value['layout']] =  $value['attributes'];
+                }
+                if (isset($elem['left_img_block_title'])){
+                    $data['left_img_block_title'] = $elem['left_img_block_title'];
+                    $flag = 'left';
+                } elseif (isset($elem['right_img_block_title'])){
+                    $data['right_img_block_title'] = $elem['right_img_block_title'];
+                    $flag = 'right';
+                }
+
+                $bigdata[$mainKey . '_' .$flag] = $data;
+            }
+
+            $object['block3_service_blocks'] = $bigdata;
+        }
 
         return $object;
 

@@ -60,7 +60,7 @@ class SpaPageResource extends Resource
             Text::make('SEO-заголовок', 'seo_title')->hideFromIndex(),
             Textarea::make('Мета-описание', 'meta_description')->hideFromIndex(),
 
-            Tabs::make('Блоки страницы ресторана', [
+            Tabs::make('Блоки страницы спа', [
                 Tab::make('Главный блок', [
                     Text::make('Толстый заголовок', 'hero_title_bold'),
                     Text::make('Тонкий заголовок', 'hero_title_thin'),
@@ -83,30 +83,27 @@ class SpaPageResource extends Resource
                     Text::make('Ссылка кнопки', 'block2_btn_link')->hideFromIndex(),
                 ]),
                 Tab::make('Третий блок', [
-                    Text::make('Заголовок 1 блока', 'block1_title')->hideFromIndex(),
-                    Flexible::make('Блок с фото слева', 'block1_with_left_img')->hideFromIndex()
-                        ->addLayout('Блок с фото слева', 'block_with_left_img', [
-                            MediaLibrary::make('Большое фото', 'big_img'),
-                            Text::make('Подзаголовок', 'sub_title'),
-                            Textarea::make('Описание', 'description'),
-                            MediaLibrary::make('Маленькое фото', 'small_img'),
-                        ]),
-                    Text::make('Заголовок 2 блока', 'block2_title')->hideFromIndex(),
-                    Flexible::make('Блок фото справа', 'block2_with_right_img')->hideFromIndex()
-                        ->addLayout('Блок с фото слева', 'block_with_right_img', [
-                            MediaLibrary::make('Большое фото', 'big_img'),
-                            Text::make('Подзаголовок', 'sub_title'),
-                            Textarea::make('Описание', 'description'),
-                            MediaLibrary::make('Маленькое фото', 'small_img'),
-                        ]),
-                    Text::make('Заголовок 3 блока', 'block3_title')->hideFromIndex(),
-                    Flexible::make('Блок фото справа', 'block3_with_left_img')->hideFromIndex()
-                        ->addLayout('Блок с фото слева', 'block_with_left_img', [
-                            MediaLibrary::make('Большое фото', 'big_img'),
-                            Text::make('Подзаголовок', 'sub_title'),
-                            Textarea::make('Описание', 'description'),
-                            MediaLibrary::make('Маленькое фото', 'small_img'),
+                    Flexible::make('Блоки с услугами', 'block3_service_blocks')
+                        ->addLayout('Большое фото слева', 'big_img_left', [
+                            Text::make('Заголовок блока', 'left_img_block_title')->hideFromIndex(),
+                            Flexible::make('Контент блока', 'slider')->hideFromIndex()
+                                ->addLayout('Слайд', 'slide', [
+                                    MediaLibrary::make('Большое фото', 'big_img'),
+                                    Text::make('Заголовок', 'sub_title'),
+                                    Textarea::make('Описание', 'description'),
+                                    MediaLibrary::make('Маленькое фото', 'small_img'),
+                                ])->button('Дабавить слайд'),
                         ])
+                        ->addLayout('Большое фото справа', 'big_img_right', [
+                            Text::make('Заголовок блока', 'right_img_block_title')->hideFromIndex(),
+                            Flexible::make('Контент блока', 'slider')->hideFromIndex()
+                                ->addLayout('Слайд', 'slide', [
+                                    MediaLibrary::make('Большое фото', 'big_img'),
+                                    Text::make('Заголовок', 'sub_title'),
+                                    Textarea::make('Описание', 'description'),
+                                    MediaLibrary::make('Маленькое фото', 'small_img'),
+                                ])->button('Дабавить слайд')
+                        ])->button('Добавить услугу')
                 ]),
                 Tab::make('Четвертый блок', [
                     Text::make('Жирный заголовок 1', 'block4_bold_title')->hideFromIndex(),
