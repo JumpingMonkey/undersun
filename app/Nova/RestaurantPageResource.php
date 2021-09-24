@@ -80,17 +80,25 @@ class RestaurantPageResource extends Resource
 
                 ]),
                 Tab::make('Блок с видео', [
-                    MediaLibrary::make('Видео', 'video')->hideFromIndex(),
+                    Text::make('Видео(ссылка)', 'video')->hideFromIndex(),
                     Text::make('Текст запуска видео', 'play_video_text')->hideFromIndex(),
                     Textarea::make('Маленький текст под видео', 'small_under_video_text')->hideFromIndex(),
                     Textarea::make('Болльшой текст под видео', 'large_under_video_text')->hideFromIndex()
                 ]),
                 Tab::make('Блок про бар', [
-                    MediaLibrary::make('Фото бара', 'bar_img_bg')->hideFromIndex(),
+                        MediaLibrary::make('Фото левого бара', 'bar_left_img')->hideFromIndex(),
                     Text::make('Левый текст', 'bar_left_text')->hideFromIndex(),
+                        Text::make('Описание под левым текстом', 'bar_left_desc')->hideFromIndex(),
+
+                        MediaLibrary::make('Фото центрального бара', 'bar_center_img')->hideFromIndex(),
                     Text::make('Центральный текст', 'bar_center_text')->hideFromIndex(),
                     Text::make('Описание под центральным текстом', 'bar_center_desc')->hideFromIndex(),
+
+                        MediaLibrary::make('Фото правого бара', 'bar_right_img')->hideFromIndex(),
                     Text::make('Правый текст', 'bar_right_text')->hideFromIndex(),
+                        Text::make('Правый текст', 'bar_right_desc')->hideFromIndex(),
+
+                        MediaLibrary::make('Фоновое фото блока', 'bar_bg_img')->hideFromIndex(),
                 ]),
                 Tab::make('Блок про отличительный стиль', [
                     Text::make('Жирный заголовок', 'style_bold_title')->hideFromIndex(),

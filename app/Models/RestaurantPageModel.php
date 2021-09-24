@@ -26,13 +26,22 @@ class RestaurantPageModel extends Model
         'int_above_btn_description',
         'int_btn_text',
         'int_btn_link',
+        'video',
         'play_video_text',
         'small_under_video_text',
         'large_under_video_text',
+
+        'bar_left_img',
         'bar_left_text',
+        'bar_left_desc',
+        'bar_center_img',
         'bar_center_text',
         'bar_center_desc',
+        'bar_right_img',
         'bar_right_text',
+        'bar_right_desc',
+        'bar_bg_img',
+
         'style_bold_title',
         'style_thin_title',
         'style_large_text_under_left_img',
@@ -58,13 +67,18 @@ class RestaurantPageModel extends Model
         'int_above_btn_description',
         'int_btn_text',
         'int_btn_link',
+        'video',
         'play_video_text',
         'small_under_video_text',
         'large_under_video_text',
+
         'bar_left_text',
+        'bar_left_desc',
         'bar_center_text',
         'bar_center_desc',
         'bar_right_text',
+        'bar_right_desc',
+
         'style_bold_title',
         'style_thin_title',
         'style_large_text_under_left_img',
@@ -85,8 +99,12 @@ class RestaurantPageModel extends Model
         'int_second_img',
         'int_third_img',
         'int_fourth_img',
-        'video',
-        'bar_img_bg',
+
+        'bar_left_img',
+        'bar_center_img',
+        'bar_right_img',
+        'bar_bg_img',
+
         'style_left_img',
         'style_right_img',
         'style2_left_little_img',
@@ -96,21 +114,23 @@ class RestaurantPageModel extends Model
 
     public static function normalizeData($object){
 
+
         self::getNormalizedField($object, 'gallery', "img", true, true);
 
         $data = [];
         $bigdata = [];
-        foreach ($object['gallery'] as $elem){
+        if (!empty($object['gallery'])){
+            foreach ($object['gallery'] as $elem){
 
-            foreach ($elem['img'] as $key => $value) {
-                $data[$key . "_" . $value['layout']] =  $value['attributes']['gallery'];
+                foreach ($elem['img'] as $key => $value) {
+                    $data[$key . "_" . $value['layout']] =  $value['attributes']['gallery'];
+                }
+                $data['location_name'] = $elem['location_name'];
+                $bigdata[] = $data;
             }
-            $data['location_name'] = $elem['location_name'];
-            $bigdata[] = $data;
+
+            $object['gallery'] = $bigdata;
         }
-
-        $object['gallery'] = $bigdata;
-
 
         return $object;
 
