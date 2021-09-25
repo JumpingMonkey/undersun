@@ -11,7 +11,7 @@ class RoomController extends Controller
     public function index()
     {
         $roomsPage = AllRoomsPageModel::getAllRoomsPage();
-        $rooms = RoomModel::getAllRooms(['room_link', 'room_preview_image', 'room_name_full', 'room_area', 'room_amount_persons', 'room_bed_size']);
+        $rooms = RoomModel::getAllRooms(['room_link', 'room_preview_image', 'room_name_full', 'room_area', 'room_amount_persons', 'room_bed_size', 'room_price', 'prefix_room_price']);
 
         return response()->json([
             'status' => 'success',

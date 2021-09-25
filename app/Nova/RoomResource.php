@@ -84,11 +84,15 @@ class RoomResource extends Resource
                         ->button('Добавить линию'),
 
 
-                    Text::make('Площадь комнаты', 'room_area')->hideFromIndex(),
+                    Text::make('Площадь комнаты с единицами изм.', 'room_area')->hideFromIndex(),
 
                     Text::make('Количество человек в комнате', 'room_amount_persons')->hideFromIndex(),
 
                     Text::make('Размер кровати', 'room_bed_size')->hideFromIndex(),
+
+                    Text::make('Стоимость номера', 'room_price')->hideFromIndex(),
+
+                    Text::make('Префикс стоимости номера', 'prefix_room_price')->hideFromIndex(),
 
                     MediaLibrary::make('Фоновое изображение', 'room_main_image')->hideFromIndex(),
 
