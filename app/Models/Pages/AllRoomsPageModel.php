@@ -22,6 +22,7 @@ class AllRoomsPageModel extends Model
         'area_label',
         'bed_label',
         'view_label',
+        'options_label',
     ];
 
     public $translatable = [
@@ -32,6 +33,7 @@ class AllRoomsPageModel extends Model
         'area_label',
         'bed_label',
         'view_label',
+        'options_label',
     ];
 
     public static function getAllRoomsPage(){

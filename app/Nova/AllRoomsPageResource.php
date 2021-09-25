@@ -62,6 +62,7 @@ class AllRoomsPageResource extends Resource
             Text::make('Текст ярлыка для площади', 'area_label')->hideFromIndex(),
             Text::make('Текст ярлыка для кровати', 'bed_label')->hideFromIndex(),
             Text::make('Текст ярлыка для вида', 'view_label')->hideFromIndex(),
+            Text::make('Текст ярлыка для опций', 'options_label')->hideFromIndex(),
 
         ];
     }
