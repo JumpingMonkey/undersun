@@ -23,6 +23,8 @@ class AllRoomsPageModel extends Model
         'bed_label',
         'view_label',
         'options_label',
+        'hero_bg_image',
+
     ];
 
     public $translatable = [
@@ -34,6 +36,10 @@ class AllRoomsPageModel extends Model
         'bed_label',
         'view_label',
         'options_label',
+    ];
+
+    public $mediaToUrl = [
+        'hero_bg_image',
     ];
 
     public static function getAllRoomsPage(){

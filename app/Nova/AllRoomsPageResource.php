@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use ClassicO\NovaMediaLibrary\MediaLibrary;
 use Digitalcloud\MultilingualNova\Multilingual;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
@@ -57,6 +58,7 @@ class AllRoomsPageResource extends Resource
             Text::make('SEO-заголовок', 'seo_title')->hideFromIndex(),
             Textarea::make('Мета-описание', 'meta_description')->hideFromIndex(),
 
+            MediaLibrary::make('Фоновое изображение первого блока', 'hero_bg_image')->hideFromIndex(),
             Text::make('Заголовок главного блока', 'hero_title')->hideFromIndex(),
             Text::make('Текст главного блока', 'hero_text')->hideFromIndex(),
             Text::make('Текст ярлыка для площади', 'area_label')->hideFromIndex(),
