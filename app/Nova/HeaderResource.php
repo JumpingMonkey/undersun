@@ -65,9 +65,8 @@ class HeaderResource extends Resource
                             '/rooms' => '/rooms',
                             '/spa' => '/spa',
                             '/restaurant' => '/restaurant',
-                            '/gallery' => '/gallery',
                             '/leisure' => '/leisure',
-                            '/contacts' => '/contacts'
+                            '/privacy-policy' => '/privacy-policy'
                         ]
                     )
                         ->displayUsingLabels()
