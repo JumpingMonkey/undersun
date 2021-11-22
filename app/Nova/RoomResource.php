@@ -158,6 +158,13 @@ class RoomResource extends Resource
 
                 ]),
 
+                Tab::make('Блок с видео', [
+                    Text::make('Видео(ссылка)', 'video')->hideFromIndex(),
+                    Text::make('Текст запуска видео', 'play_video_text')->hideFromIndex(),
+                    Textarea::make('Маленький текст под видео', 'small_under_video_text')->hideFromIndex(),
+                    Textarea::make('Болльшой текст под видео', 'large_under_video_text')->hideFromIndex()
+                ]),
+
                 Tab::make('Блок с опциями', [
 
                     Text::make('Малый заголовок', 'room_options_small_title')->hideFromIndex(),

@@ -39,6 +39,10 @@ class RoomModel extends Model
         'room_options_btn_text',
         'room_preview_image',
         'room_name_full',
+        'video',
+        'play_video_text',
+        'small_under_video_text',
+        'large_under_video_text',
     ];
 
     public $translatable = [
@@ -58,6 +62,9 @@ class RoomModel extends Model
         'room_options_items',
         'room_options_btn_text',
         'room_name_full',
+        'play_video_text',
+        'small_under_video_text',
+        'large_under_video_text',
     ];
 
     public $mediaToUrl = [
@@ -72,7 +79,9 @@ class RoomModel extends Model
         'tab_images',
         'slide_big_image',
         'slide_small_image',
-        'value'
+        'value',
+        'video',
+
     ];
 
     public static function normalizeData($object){
