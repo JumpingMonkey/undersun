@@ -80,7 +80,6 @@ class RoomModel extends Model
         'slide_big_image',
         'slide_small_image',
         'value',
-        'video',
 
     ];
 
