@@ -117,14 +117,17 @@ class RestaurantPageModel extends Model
 
         self::getNormalizedField($object, 'gallery', "img", true, true);
 
+        $imgData = [];
         $data = [];
         $bigdata = [];
         if (!empty($object['gallery'])){
             foreach ($object['gallery'] as $elem){
 
                 foreach ($elem['img'] as $key => $value) {
-                    $data[$key . "_" . $value['layout']] =  $value['attributes']['gallery'];
+                    $imgData[$key . "_" . $value['layout']] =  $value['attributes']['gallery'];
+
                 }
+                $data['img'] = $imgData;
                 $data['location_name'] = $elem['location_name'];
                 $bigdata[] = $data;
             }
