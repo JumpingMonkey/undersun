@@ -18,26 +18,20 @@ class PrivatPolicyModel extends Model
         'seo_title',
         'meta_description',
         'title',
-        'title_block_1',
-        'desc_block_1',
-        'title_block_2',
-        'desc_block_2',
-        'title_block_3',
-        'desc_block_3'
+        'blocks'
+
     ];
     public $translatable = [
         'seo_title',
         'meta_description',
         'title',
-        'title_block_1',
-        'desc_block_1',
-        'title_block_2',
-        'desc_block_2',
-        'title_block_3',
-        'desc_block_3'
+        'blocks'
+
     ];
 
     public static function normalizeData($object){
+
+        self::getNormalizedField($object, 'blocks', "desc_block", true, true);
 
         return $object;
 

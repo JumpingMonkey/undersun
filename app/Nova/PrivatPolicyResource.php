@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class PrivatPolicyResource extends Resource
 {
@@ -58,14 +59,11 @@ class PrivatPolicyResource extends Resource
 
             Text::make('Заголовок', 'title'),
 
-            Text::make('1 блок заголовок', 'title_block_1')->hideFromIndex(),
-            Textarea::make('1 блок писание', 'desc_block_1')->hideFromIndex(),
-
-            Text::make('2 блок заголовок', 'title_block_2')->hideFromIndex(),
-            Textarea::make('2 блок писание', 'desc_block_2')->hideFromIndex(),
-
-            Text::make('3 блок заголовок', 'title_block_3')->hideFromIndex(),
-            Textarea::make('3 блок писание', 'desc_block_3')->hideFromIndex(),
+            Flexible::make('Текстовые блоки', 'blocks')
+                ->addLayout('Текстовый блок', 'text_block', [
+                    Text::make('Заголовок', 'title_block')->hideFromIndex(),
+                    Textarea::make('Писание', 'desc_block')->hideFromIndex(),
+                ])->button('Добавить тектовый блок'),
         ];
     }
 
